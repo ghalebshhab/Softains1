@@ -1,0 +1,98 @@
+.container {
+  font-size: 16px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+.mem {
+  background-image: url("../Light.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  aspect-ratio: 350/300;
+  max-width: 300px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border: 2px solid #bdbdbd;
+}
+
+.team-grid {
+  display: grid;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.team-leaders {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin-bottom: 2rem;
+}
+
+.leaders {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  margin-bottom: 2rem;
+}
+
+.members {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.section-title {
+  text-align: center;
+  margin: 2rem 0 1rem 0;
+  width: 100%;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem 0.5rem;
+  }
+  
+  .team-leaders {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .leaders {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+  
+  .members {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.25rem;
+    margin: 1.5rem 0 0.5rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .leaders,
+  .members {
+    grid-template-columns: 1fr;
+  }
+  
+  .mem {
+    aspect-ratio: 300/250;
+  }
+}

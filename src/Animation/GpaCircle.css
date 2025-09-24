@@ -1,0 +1,48 @@
+/* GpaCircle.css */
+.gpa-circle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.gpa-circle-wrapper {
+  position: relative;
+  width: 180px;
+  height: 180px;
+}
+
+.gpa-circle-svg {
+  transform: rotate(-90deg);
+}
+
+.gpa-circle-bg {
+  fill: none;
+  stroke: #e0e0e0;
+}
+
+.gpa-circle-progress {
+  fill: none;
+  transition: stroke-dashoffset 0.5s ease, stroke 0.5s ease;
+}
+
+.gpa-circle-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.gpa-circle-value {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.gpa-circle-label {
+  font-size: 1rem;
+  color: #666;
+  text-transform: uppercase;
+}

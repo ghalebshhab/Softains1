@@ -1,0 +1,214 @@
+/* Sidebar.css */
+:root {
+  --sidebar-width: 30%;
+  --bg-color: black;
+  --text-color: white;
+  --border-color: #e0e0e0;
+  --hover-color: #f5f5f5;
+  --active-color: #000000;
+  --active-bg: #f0f0f0;
+  --badge-color: #000000;
+  --badge-text: #ffffff;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: var(--sidebar-width);
+  background: var(--bg-color);
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow);
+}
+
+.sidebar-profile {
+  padding: 2rem 1.5rem 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+}
+
+.profile-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 1rem;
+  border: 2px solid var(--border-color);
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-info h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: var(--text-color);
+}
+
+.profile-info p {
+  font-size: 0.85rem;
+  color: var(--text-color);
+  opacity: 0.7;
+}
+
+.sidebar-nav {
+  flex: 1;
+  padding: 1.5rem 0;
+  overflow-y: auto;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-nav li {
+  margin-bottom: 0.25rem;
+}
+
+.sidebar-nav a {
+  display: flex;
+  align-items: center;
+  padding: 0.9rem 1.5rem;
+  text-decoration: none;
+  color: var(--text-color);
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.sidebar-nav a:hover {
+  background: var(--hover-color);
+}
+
+.sidebar-nav li.active a {
+  background: var(--active-bg);
+  color: var(--active-color);
+  font-weight: 600;
+}
+
+.sidebar-nav svg {
+  font-size: 1.25rem;
+  margin-right: 1rem;
+  min-width: 24px;
+  color: var(--text-color);
+}
+
+.sidebar-nav .badge {
+  background: var(--badge-color);
+  color: var(--badge-text);
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  margin-left: auto;
+}
+
+.sidebar-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.logout-btn {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0.75rem;
+  border-radius: 8px;
+  color: var(--text-color);
+  transition: all 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: var(--hover-color);
+}
+
+.logout-btn svg {
+  font-size: 1.25rem;
+  margin-right: 1rem;
+  color: var(--text-color);
+}
+
+.mobile-menu-btn {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1100;
+  background: var(--bg-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .sidebar {
+    transform: translateX(-100%);
+    width: var(--sidebar-width);
+  }
+  
+  .sidebar.open {
+    transform: translateX(0);
+  }
+  
+  .mobile-menu-btn {
+    display: flex;
+  }
+}
+
+/* Animation for sidebar items */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.sidebar-nav li {
+  animation: slideIn 0.3s ease forwards;
+}
+
+.sidebar-nav li:nth-child(1) { animation-delay: 0.05s; }
+.sidebar-nav li:nth-child(2) { animation-delay: 0.1s; }
+.sidebar-nav li:nth-child(3) { animation-delay: 0.15s; }
+.sidebar-nav li:nth-child(4) { animation-delay: 0.2s; }
+.sidebar-nav li:nth-child(5) { animation-delay: 0.25s; }
+.sidebar-nav li:nth-child(6) { animation-delay: 0.3s; }
+.sidebar-nav li:nth-child(7) { animation-delay: 0.35s; }
+.sidebar-nav li:nth-child(8) { animation-delay: 0.4s; }
+.sidebar-nav li:nth-child(9) { animation-delay: 0.45s; }

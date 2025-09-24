@@ -1,0 +1,18 @@
+.visitor-counter {
+  position: fixed;         /* always visible */
+  bottom: 15px;            /* stick at bottom */
+  right: 20px;             /* move to right */
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 8px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease-in-out;
+}
+
+.visitor-counter:hover {
+  transform: scale(1.05);
+}

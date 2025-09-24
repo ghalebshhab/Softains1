@@ -1,0 +1,27 @@
+.roads{
+    display: flex;
+    flex-direction: column;
+    border:2px solid #bdbdbd;
+    border-radius: 20%;
+    -webkit-border-radius: 20%;
+    -moz-border-radius: 20%;
+    -ms-border-radius: 20%;
+    -o-border-radius: 20%;
+}
+.roads section{
+    margin-bottom: 5%;
+
+}
+.web {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Distributes cards evenly */
+  gap: 20px; /* Consistent gap between cards */
+  width: 100%;
+}
+
+.Lang {
+  flex: 0 0 calc(50% - 10px); /* Exactly 50% minus half the gap */
+  display: flex;
+  justify-content: center; /* Centers the card within its container */
+}

@@ -1,0 +1,60 @@
+.Subjects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px; /* adds space between cards */
+  width: 90%;
+  margin: 0 auto; /* center the grid */
+}
+
+/* Tablet screens */
+@media (max-width: 1024px) {
+  .Subjects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .jvv{
+    width: 60%;
+
+  }
+  .jvv custom-spotlight-card{
+    width: 60%;
+  }
+}
+.subject-card {
+  width: 25%;           /* default for desktops */
+  margin-bottom: 3%;
+  display: flex;
+  justify-content: center;
+}
+
+.subject-card .custom-spotlight-card {
+  width: 100%;
+  max-width: 250px;     /* don’t get too wide */
+}
+
+/* Tablet screens */
+@media (max-width: 1024px) {
+  .subject-card {
+    width: 40%;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 600px) {
+  .subject-card {
+    width: 90%;   /* full width on phones */
+  }
+}
+
+
+/* Mobile screens */
+@media (max-width: 600px) {
+  .Subjects {
+    grid-template-columns: 1fr;
+  }
+  .jvv{
+    width:60%;
+  }
+   .jvv custom-spotlight-card{
+    width: 60%;
+  }
+}
