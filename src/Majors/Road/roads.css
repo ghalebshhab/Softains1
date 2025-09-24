@@ -1,27 +1,43 @@
-.roads{
+.roads {
     display: flex;
     flex-direction: column;
-    border:2px solid #bdbdbd;
+    border: 2px solid #bdbdbd;
     border-radius: 20%;
     -webkit-border-radius: 20%;
     -moz-border-radius: 20%;
     -ms-border-radius: 20%;
     -o-border-radius: 20%;
+    padding: 10px; /* Added padding */
+    box-sizing: border-box; /* Ensure border + padding are included in width */
 }
-.roads section{
-    margin-bottom: 5%;
 
-}
 .web {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; /* Distributes cards evenly */
-  gap: 20px; /* Consistent gap between cards */
-  width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box; /* Added for safety */
 }
 
-.Lang {
-  flex: 0 0 calc(50% - 10px); /* Exactly 50% minus half the gap */
-  display: flex;
-  justify-content: center; /* Centers the card within its container */
+@media (max-width: 768px) {
+    .Lang {
+        flex: 0 0 100%; /* Full width on tablets/small screens */
+        margin-bottom: 20px;
+    }
+    .web {
+        justify-content: center;
+    }
+    .roads h1 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .roads h1 {
+        font-size: 1.5rem;
+    }
+    .Lang {
+        flex: 0 0 100%;
+    }
 }

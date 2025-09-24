@@ -77,7 +77,7 @@ export default function Software() {
           <Link to={"/" + sub.path}>
             {" "}
             <SpotlightCard
-              style={{ width: "30%" }}
+              style={{ width: "40%" }}
               className="custom-spotlight-card"
               spotlightColor="rgba(0, 229, 255, 0.2)"
             >
