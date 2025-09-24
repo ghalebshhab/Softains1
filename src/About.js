@@ -177,16 +177,6 @@ export default function About() {
             </button>
           </div>
         </div>
-        <div className="copyright-container">
-          <h2 className="copyright-text">
-            <BlurText
-              text="Copyright © 2025 Softians. All rights reserved."
-              delay={150}
-              animateBy="letters"
-              direction="top"
-            />
-          </h2>
-        </div>
       </main>
     </div>
   );

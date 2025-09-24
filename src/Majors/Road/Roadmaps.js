@@ -22,6 +22,18 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import CardActionArea from "@mui/material/CardActionArea";
 import Button from "@mui/material/Button";
+import LanguageIcon from "@mui/icons-material/Language";
+import DescriptionIcon from "@mui/icons-material/Description";
+// For Option 2:
+import Chip from "@mui/material/Chip";
+// For Option 3:
+import Collapse from "@mui/material/Collapse";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import Box from "@mui/material/Box";
 export default function Roadmaps() {
   const prog = [
     {
@@ -29,24 +41,29 @@ export default function Roadmaps() {
       photo: Html,
       col: "linear-gradient(135deg, #e34c26, #f06529)",
       desc: "لغة لبناء هيكل صفحات الويب وتحديد عناصرها الأساسية",
+      youtubeLink: "https://youtu.be/6QAELgirvjs?si=o2YA2we15EQGLMLF",
     },
     {
       name: "Css",
       photo: Css,
       col: " linear-gradient(135deg, #264de4, #2965f1)",
       desc: "لغة لتنسيق وتصميم صفحات الويب وجعلها جذّابة بصريًا",
+      youtubeLink: "https://www.youtube.com/watch?v=X1ulCwyhCVM",
     },
     {
       name: "Java Script",
       photo: Js,
       col: "black",
       desc: "لغة برمجة لإضافة التفاعل والحركة إلى صفحات الويب",
+      youtubeLink: "https://youtu.be/TbHeHAyAV7Q?si=GyUvd5O4EJzwX7Hm",
     },
     {
       name: "React Js",
       photo: Reac,
       col: "linear-gradient(135deg, #61dafb, #21a1f1)",
       desc: "مكتبة جافاسكربت لبناء واجهات مستخدم تفاعلية وسريعة",
+      youtubeLink: "https://youtu.be/ihRRf3EjTV8?si=w0stFK_NmgfKNbZt",
+      w3Link: "https://www.w3schools.com/react/default.asp",
     },
   ];
   return (
@@ -147,17 +164,47 @@ export default function Roadmaps() {
                           >
                             {p.name}
                           </Typography>
-                          <Typography sx={{ color: "black" }}>
+                          <Typography sx={{ color: "black", mb: 2 }}>
                             {p.desc}
                           </Typography>
-                          <Typography variant="body2" sx={{ color: "black" }}>
-                            <Button
-                              variant="contained"
-                              sx={{ background: p.col }}
-                            >
-                              About It
-                            </Button>
-                          </Typography>
+
+                          {/* Links as Chips */}
+                          <Box
+                            sx={{
+                              display: "flex",
+                              flexDirection: "column",
+                              gap: 1,
+                              mb: 2,
+                            }}
+                          >
+                            <Chip
+                              icon={<YouTubeIcon />}
+                              label="Watch Tutorial"
+                              clickable
+                              href={p.youtubeLink}
+                              target="_blank"
+                              variant="outlined"
+                              sx={{ borderColor: p.col, color: p.col }}
+                              component="a"
+                              onClick={() => window.open(p.w3Link, "_blank")}
+                            />
+                            <Chip
+                              icon={<LanguageIcon />}
+                              label="W3Schools"
+                              clickable
+                              href={p.w3Link}
+                              target="_blank"
+                              variant="outlined"
+                              sx={{ borderColor: p.col, color: p.col }}
+                            />
+                          </Box>
+
+                          <Button
+                            variant="contained"
+                            sx={{ background: p.col, width: "100%" }}
+                          >
+                            Learn More
+                          </Button>
                         </CardContent>
                       </CardActionArea>
                     </Card>
