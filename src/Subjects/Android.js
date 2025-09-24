@@ -216,27 +216,6 @@ export default function Android() {
               </button>
             </div>
           </div>
-          <div
-            style={{
-              width: "100%",
-              textAlign: "center",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              alignContent: "center",
-              marginTop: "1%",
-            }}
-          >
-            <h2 style={{ textAlign: "center", alignSelf: "center" }}>
-              <BlurText
-                text="Copyright © 2025 Softians. All rights reserved."
-                delay={150}
-                animateBy="letters"
-                direction="top"
-                className="text-2xl mb-8"
-              />
-            </h2>
-          </div>
         </main>
       </div>
     </>

@@ -47,6 +47,8 @@ import Intern from "./Subjects/Intern";
 import Card from "./Majors/Card";
 import Header from "./Header";
 import Roadmaps from "./Majors/Road/Roadmaps";
+import BlurText from "./Animation/BlurText";
+import "./Test3.css";
 function App() {
   function DeveloperRedirect() {
     React.useEffect(() => {
@@ -108,6 +110,16 @@ function App() {
         <Route path="/developer" element={<DeveloperRedirect />} />
       </Routes>
       <VisitorCounter />
+      <div className="copyright-container">
+        <h2 className="copyright-text">
+          <BlurText
+            text="Copyright © 2025 Softians. All rights reserved."
+            delay={150}
+            animateBy="letters"
+            direction="top"
+          />
+        </h2>
+      </div>
       <div style={{ width: "100%", margin: "3% 0" }}>
         <h2 style={{ textAlign: "center" }}>Developed By : Ghaleb Shhab</h2>
       </div>
