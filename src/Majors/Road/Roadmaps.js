@@ -34,6 +34,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import Box from "@mui/material/Box";
+import RR from "./Images/road-map.png";
 export default function Roadmaps() {
   const prog = [
     {
@@ -42,6 +43,8 @@ export default function Roadmaps() {
       col: "linear-gradient(135deg, #e34c26, #f06529)",
       desc: "لغة لبناء هيكل صفحات الويب وتحديد عناصرها الأساسية",
       youtubeLink: "https://youtu.be/6QAELgirvjs?si=o2YA2we15EQGLMLF",
+      w3Link: "https://www.w3schools.com/html/default.asp",
+      more: "https://developer.mozilla.org/en-US/docs/Web/HTML",
     },
     {
       name: "Css",
@@ -49,6 +52,8 @@ export default function Roadmaps() {
       col: " linear-gradient(135deg, #264de4, #2965f1)",
       desc: "لغة لتنسيق وتصميم صفحات الويب وجعلها جذّابة بصريًا",
       youtubeLink: "https://www.youtube.com/watch?v=X1ulCwyhCVM",
+      w3Link: "https://www.w3schools.com/css/default.asp",
+      more: "https://developer.mozilla.org/en-US/docs/Web/CSS",
     },
     {
       name: "Java Script",
@@ -56,6 +61,8 @@ export default function Roadmaps() {
       col: "black",
       desc: "لغة برمجة لإضافة التفاعل والحركة إلى صفحات الويب",
       youtubeLink: "https://youtu.be/TbHeHAyAV7Q?si=GyUvd5O4EJzwX7Hm",
+      w3Link: "https://www.w3schools.com/js/default.asp",
+      more: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
     },
     {
       name: "React Js",
@@ -64,6 +71,7 @@ export default function Roadmaps() {
       desc: "مكتبة جافاسكربت لبناء واجهات مستخدم تفاعلية وسريعة",
       youtubeLink: "https://youtu.be/ihRRf3EjTV8?si=w0stFK_NmgfKNbZt",
       w3Link: "https://www.w3schools.com/react/default.asp",
+      more: "https://react.dev/",
     },
   ];
   return (
@@ -120,6 +128,18 @@ export default function Roadmaps() {
               className="custom-className"
             />
           </h1>
+          <h1 style={{ textAlign: "center" }}>Our Road Maps</h1>
+          <div
+            style={{
+              backgroundImage: `url(${RR})`, // RR must be imported correctly
+              backgroundPosition: "center",
+              backgroundSize: "contain",
+              width: "100%",
+              height: "300px", // Must set a height or the div has 0 height
+              backgroundRepeat: "no-repeat",
+              marginBottom: "5%",
+            }}
+          ></div>
           <div
             style={{
               textAlign: "center",
@@ -129,7 +149,7 @@ export default function Roadmaps() {
           >
             {" "}
             <div className="roads">
-              <h1> Web Development</h1>
+              <h1 style={{ marginBottom: "3%" }}> Web Development</h1>
               <div className="web">
                 {prog.map((p) => (
                   <div className="Lang" key={p.id}>
@@ -177,31 +197,55 @@ export default function Roadmaps() {
                               mb: 2,
                             }}
                           >
-                            <Chip
-                              icon={<YouTubeIcon />}
-                              label="Watch Tutorial"
-                              clickable
+                            <a
                               href={p.youtubeLink}
                               target="_blank"
-                              variant="outlined"
-                              sx={{ borderColor: p.col, color: p.col }}
-                              component="a"
-                              onClick={() => window.open(p.w3Link, "_blank")}
-                            />
-                            <Chip
-                              icon={<LanguageIcon />}
-                              label="W3Schools"
-                              clickable
+                              style={{ textDecoration: "none" }}
+                            >
+                              <Button
+                                variant="outlined"
+                                startIcon={<YouTubeIcon />}
+                                sx={{
+                                  borderColor: "black",
+                                  color: "black",
+                                  "&:hover": {
+                                    background: p.col,
+                                    color: "white",
+                                  },
+                                }}
+                              >
+                                YouTube
+                              </Button>
+                            </a>
+
+                            <a
                               href={p.w3Link}
                               target="_blank"
-                              variant="outlined"
-                              sx={{ borderColor: p.col, color: p.col }}
-                            />
+                              style={{ textDecoration: "none" }}
+                            >
+                              <Button
+                                variant="outlined"
+                                startIcon={<LanguageIcon />}
+                                sx={{
+                                  borderColor: "black",
+                                  color: "black",
+                                  "&:hover": {
+                                    background: p.col,
+                                    color: "white",
+                                  },
+                                }}
+                              >
+                                W3Schools
+                              </Button>
+                            </a>
                           </Box>
 
                           <Button
                             variant="contained"
                             sx={{ background: p.col, width: "100%" }}
+                            onClick={() => {
+                              window.open(p.more, "_blank");
+                            }}
                           >
                             Learn More
                           </Button>
@@ -211,14 +255,6 @@ export default function Roadmaps() {
                   </div>
                 ))}
               </div>
-              <h1>C#</h1>
-              <section>
-                <p>About the C#</p>
-              </section>
-              <h1>Android</h1>
-              <section>
-                <p>About the Android</p>
-              </section>
             </div>
           </div>
 
