@@ -48,7 +48,7 @@
 
 .copyright-text {
   text-align: center;
-  font-size: clamp(0.9rem, 3vw, 1.2rem); /* Responsive font size */
+  font-size: clamp(1.3rem, 3vw, 1.2rem); /* Responsive font size */
   margin: 10px 0;
   line-height: 1.4;
   word-wrap: break-word;
@@ -63,7 +63,7 @@
   }
   
   .copyright-text {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     line-height: 1.3;
   }
 }
@@ -75,7 +75,7 @@
   }
   
   .copyright-text {
-    font-size: 0.8rem;
+    font-size: 1.1rem;
   }
 }
 
