@@ -2,42 +2,79 @@
     display: flex;
     flex-direction: column;
     border: 2px solid #bdbdbd;
-    border-radius: 20%;
-    -webkit-border-radius: 20%;
-    -moz-border-radius: 20%;
-    -ms-border-radius: 20%;
-    -o-border-radius: 20%;
-    padding: 10px; /* Added padding */
-    box-sizing: border-box; /* Ensure border + padding are included in width */
+    border-radius: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .web {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     gap: 20px;
     width: 100%;
-    box-sizing: border-box; /* Added for safety */
+    box-sizing: border-box;
 }
 
+.Lang {
+    flex: 0 0 calc(50% - 10px); /* Exactly 50% width minus half the gap */
+    max-width: calc(50% - 10px); /* Ensure it doesn't grow beyond 50% */
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Tablet View */
 @media (max-width: 768px) {
+    .roads {
+        padding: 15px;
+        border-radius: 15px;
+    }
+    
     .Lang {
-        flex: 0 0 100%; /* Full width on tablets/small screens */
-        margin-bottom: 20px;
+        flex: 0 0 calc(50% - 10px); /* Still two cards per row */
+        max-width: calc(50% - 10px);
     }
-    .web {
-        justify-content: center;
-    }
+    
     .roads h1 {
         font-size: 1.8rem;
+        text-align: center;
     }
 }
 
+/* Mobile View - KEEP 2 CARDS PER ROW */
 @media (max-width: 480px) {
+    .roads {
+        padding: 10px;
+        border-radius: 10px;
+    }
+    
+    .web {
+        gap: 15px; /* Smaller gap on mobile */
+    }
+    
+    .Lang {
+        flex: 0 0 calc(50% - 7.5px); /* 50% width with smaller gap */
+        max-width: calc(50% - 7.5px);
+    }
+    
     .roads h1 {
         font-size: 1.5rem;
+        text-align: center;
     }
+}
+
+/* For very small screens, adjust but keep 2 cards */
+@media (max-width: 360px) {
     .Lang {
-        flex: 0 0 100%;
+        flex: 0 0 calc(50% - 5px);
+        max-width: calc(50% - 5px);
+    }
+    
+    .web {
+        gap: 10px;
     }
 }
