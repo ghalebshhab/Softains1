@@ -23,11 +23,12 @@ import App from "../App";
 export default function Software() {
   const subjects = [
     // إجباري كلية
-
+    { name: "C++ & Lab" },
+    { name: "Java 1 & Lab" },
     { name: "Data Structures", path: "dataStructures" },
     { name: "Visual Programming", path: "visualProgramming" },
     { name: "Software", path: "softwared" },
-    { name: "SPM (إدارة مشاريع برمجية)", path: "spm" },
+    { name: "SPM", path: "spm" },
     { name: "UML", path: "uml" },
     { name: "Web", path: "web" },
     { name: "Documentation", path: "documentation" },
@@ -53,7 +54,7 @@ export default function Software() {
     { name: "Network", path: "network" },
     { name: "Operating System", path: "os" },
     { name: "IoT Security", path: "iotSecurity" },
-    { name: "ORG (تنظيم الحاسوب)", path: "org" },
+    { name: "ORG ", path: "org" },
 
     // مواد من كليات اخرى
     { name: "Calculus 1", path: "calc" },
@@ -144,27 +145,7 @@ export default function Software() {
               style={{ borderRadius: "10%" }}
             />
             <hr style={{ marginBottom: "2%", marginTop: "2%", width: "90%" }} />
-            <div className="subject-card">
-              <Link to="/Cplus">
-                <SpotlightCard
-                  className="custom-spotlight-card"
-                  spotlightColor="rgba(0, 229, 255, 0.2)"
-                >
-                  C++ & Lab
-                </SpotlightCard>
-              </Link>
-            </div>
 
-            <div className="subject-card">
-              <Link to="/Java">
-                <SpotlightCard
-                  className="custom-spotlight-card"
-                  spotlightColor="rgba(0, 229, 255, 0.2)"
-                >
-                  Java1 & Lab
-                </SpotlightCard>
-              </Link>
-            </div>
             <div className="Subjects">{subs}</div>
           </div>
         </main>

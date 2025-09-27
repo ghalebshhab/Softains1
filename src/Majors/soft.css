@@ -21,7 +21,7 @@
   }
 }
 .subject-card {
-  width: 25%;           /* default for desktops */
+  width: 30%;           /* default for desktops */
   margin-bottom: 3%;
   display: flex;
   justify-content: center;

@@ -19,6 +19,49 @@ import SideBar from "./Animation/SideBar";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import Header from "./Header";
 import VisitorCounter from "./VisitorCounter";
+import LogoLoop from "./Animation/LogoLoop";
+import {
+  SiReact,
+  SiNextdotjs,
+  SiTypescript,
+  SiTailwindcss,
+} from "react-icons/si";
+import { Typography } from "@mui/material";
+
+const techLogos = [
+  { node: <SiReact />, title: "React", href: "https://react.dev" },
+  { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org" },
+  {
+    node: <SiTypescript />,
+    title: "TypeScript",
+    href: "https://www.typescriptlang.org",
+  },
+  {
+    node: <SiTailwindcss />,
+    title: "Tailwind CSS",
+    href: "https://tailwindcss.com",
+  },
+];
+
+// Alternative with image sources
+const imageLogos = [
+  {
+    src: "/logos/company1.png",
+    alt: "Company 1",
+    href: "https://company1.com",
+  },
+  {
+    src: "/logos/company2.png",
+    alt: "Company 2",
+    href: "https://company2.com",
+  },
+  {
+    src: "/logos/company3.png",
+    alt: "Company 3",
+    href: "https://company3.com",
+  },
+];
+
 export default function Test3() {
   const [click, setclick] = useState(false);
   return (
@@ -125,6 +168,31 @@ export default function Test3() {
             <VisitorCounter />
           </div>
           <Sapp />
+          <div
+            style={{
+              textAlign: "center",
+              display: "flex",
+              justifyContent: "center",
+              alignContent: "center",
+              alignItems: "center",
+              height: "90vh",
+              flexDirection: "column",
+            }}
+          >
+            {" "}
+            <h3 style={{ textAlign: "center", marginBottom: "1%" }}>
+              <Link to="/roadmaps">
+                <SpotlightCard
+                  style={{ alignSelf: "center" }}
+                  className="custom-spotlight-card"
+                  spotlightColor="rgba(0, 229, 255, 0.2)"
+                >
+                  Our RoadMaps
+                </SpotlightCard>
+              </Link>
+            </h3>
+            <div className="ro"></div>
+          </div>
           <div className="contact">
             <h3 style={{ textAlign: "center" }}>Contact US :</h3>
             <div

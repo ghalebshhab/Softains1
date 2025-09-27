@@ -7,7 +7,14 @@
     box-sizing: border-box;
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto 3% auto;
+}
+.ll{
+    background-image: url("./Images/front-end-programming.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 70%;
 }
 
 .web {

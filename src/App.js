@@ -120,7 +120,7 @@ function App() {
           />
         </h2>
       </div>
-      <div style={{ width: "100%", margin: "3% 0" }}>
+      <div style={{ width: "100%", margin: "1% 0 3% 0" }}>
         <h2 style={{ textAlign: "center" }}>Developed By : Ghaleb Shhab</h2>
       </div>
     </>

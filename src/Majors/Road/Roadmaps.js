@@ -35,6 +35,10 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import Box from "@mui/material/Box";
 import RR from "./Images/road-map.png";
+import andro from "./Images/android.png";
+import front from "./Images/front-end-programming.png";
+import vue from "./Images/Vue.png";
+import Ang from "./Images/Angular.png";
 export default function Roadmaps() {
   const prog = [
     {
@@ -72,6 +76,42 @@ export default function Roadmaps() {
       youtubeLink: "https://youtu.be/ihRRf3EjTV8?si=w0stFK_NmgfKNbZt",
       w3Link: "https://www.w3schools.com/react/default.asp",
       more: "https://react.dev/",
+    },
+    {
+      name: "Vue Js",
+      photo: vue,
+      col: "linear-gradient(135deg, #42b883, #35495e)",
+      desc: "إطار عمل خفيف وتدريجي   لبناء واجهات المستخدم وتطبيقات الويب أحادية الصفحة",
+      youtubeLink: "https://youtu.be/ihRRf3EjTV8?si=w0stFK_NmgfKNbZt",
+      w3Link: "https://www.w3schools.com/react/default.asp",
+      more: "https://vuejs.org",
+    },
+    {
+      name: "Angular Js",
+      photo: Ang,
+      col: "linear-gradient(135deg, #dd0031, #c3002f)",
+      desc: "إطار عمل قوي    لتطوير تطبيقات ويب كبيرة وديناميكية",
+      youtubeLink: "https://youtu.be/ihRRf3EjTV8?si=w0stFK_NmgfKNbZt",
+      w3Link: "https://www.w3schools.com/react/default.asp",
+      more: "https://angular.dev",
+    },
+  ];
+  const an = [
+    {
+      name: "Android",
+      photo: andro,
+      col: "",
+      desc: "",
+      youtubeLink: "",
+      other: "",
+    },
+    {
+      name: "Android",
+      photo: andro,
+      col: "",
+      desc: "",
+      youtubeLink: "",
+      other: "",
     },
   ];
   return (
@@ -145,11 +185,33 @@ export default function Roadmaps() {
               textAlign: "center",
               display: "flex",
               justifyContent: "center",
+              flexDirection: "column",
             }}
           >
             {" "}
+            <h1 style={{ marginBottom: "3%" }}> Web Development</h1>
             <div className="roads">
-              <h1 style={{ marginBottom: "3%" }}> Web Development</h1>
+              <h1
+                style={{
+                  marginBottom: "3%",
+                  display: "flex",
+                  alignItems: "center",
+                  textAlign: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <img
+                  src={front}
+                  alt="icon"
+                  style={{
+                    width: "50px",
+                    height: "50px",
+                    borderRadius: "50%",
+                    marginRight: "10px",
+                  }}
+                />
+                Front End
+              </h1>
               <div className="web">
                 {prog.map((p) => (
                   <div className="Lang" key={p.id}>
@@ -255,6 +317,38 @@ export default function Roadmaps() {
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+          <div className="roads">
+            <h1 style={{ textAlign: "center" }}>Android</h1>
+            <div className="web">
+              {an.map((a) => {
+                return (
+                  <div className="Lang">
+                    <Card>
+                      <CardActionArea />
+                      <CardMedia
+                        component="img"
+                        image={a.photo}
+                        alt={a.name}
+                        sx={{
+                          objectFit: "cover",
+                          objectPosition: "center",
+                          width: "100%",
+                          height: "50%",
+                        }}
+                      />
+                      <Typography
+                        variant="h3"
+                        sx={{ color: "black", textAlign: "center" }}
+                      >
+                        {a.name}
+                      </Typography>
+                      <Typography>{a.desc}</Typography>
+                    </Card>
+                  </div>
+                );
+              })}
             </div>
           </div>
 
