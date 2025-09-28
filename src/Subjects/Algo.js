@@ -9,6 +9,10 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import Magnet from "../Animation/Magent";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import L from "./img/Algo.png";
+import { Card } from "@mui/material";
+import BookCard from "./BookCard";
+
 export default function Algo() {
   return (
     <>
@@ -45,8 +49,32 @@ export default function Algo() {
             }}
           >
             {" "}
+          </div>
+          <div
+            className="mainn"
+            style={{
+              backgroundImage: `url(${L})`, // <-- use url() with template literal
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "contain",
+              width: "100%",
+              height: "60vh",
+              backgroundColor: "transparent",
+            }}
+          ></div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center", // horizontal center
+              alignItems: "center", // vertical center
+              // full viewport height
+              width: "100%",
+              textAlign: "center",
+              flexDirection: "column",
+              marginBottom: "2%",
+            }}
+          >
             <h1>
-              {" "}
               <ClickSpark
                 sparkColor="#fff"
                 sparkSize={20}
@@ -55,15 +83,36 @@ export default function Algo() {
                 duration={400}
               >
                 <BlurText
-                  text="Algorithim "
+                  text="Algorithm"
                   delay={150}
                   animateBy="letters"
                   direction="top"
-                  className="text-2xl mb-8"
-                />{" "}
-              </ClickSpark>{" "}
+                  style={{
+                    color: "#fff",
+                    fontSize: "3rem",
+                    fontWeight: "700",
+                  }}
+                />
+              </ClickSpark>
             </h1>
           </div>
+          <div
+            style={{
+              width: "100%",
+              display: "flex",
+              flexDirection: "column",
+              alignContent: "center",
+              alignItems: "center",
+              justifyContent: "center",
+              marginBottom: "0%",
+            }}
+          >
+            <BookCard
+              title="Algorithm 3rd Edition"
+              link="https://drive.google.com/file/d/1fVjbYIDlEnBMawcHLk2VeEl6qDze59jl/view?usp=drive_link"
+            />
+          </div>
+
           <div
             className="disc"
             style={{

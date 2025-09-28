@@ -202,6 +202,7 @@ export default function Software() {
                 borderRadius: "6px",
                 textDecoration: "none",
                 fontWeight: "600",
+                marginBottom: "2%",
               }}
             >
               <Button />
@@ -211,7 +212,7 @@ export default function Software() {
               src={Logo1}
               alt="Logo"
               width="80%"
-              style={{ borderRadius: "10%" }}
+              style={{ borderRadius: "10%", marginBottom: "2%" }}
             />
             <a
               href={Logo1}
