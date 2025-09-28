@@ -104,7 +104,7 @@ export default function Algo() {
       btn: {
         padding: "8px 12px",
         borderRadius: 8,
-        background: "rgba(255,255,255,0.06)",
+        background: "black",
         color: "#fff",
         textDecoration: "none",
         border: "1px solid rgba(255,255,255,0.08)",
@@ -112,7 +112,7 @@ export default function Algo() {
         cursor: "pointer",
       },
       btnPrimary: {
-        background: "rgba(255,255,255,0.12)",
+        background: "black",
         border: "1px solid rgba(255,255,255,0.16)",
       },
       modalBackdrop: {
@@ -140,9 +140,9 @@ export default function Algo() {
       },
       closeBtn: {
         position: "absolute",
-        top: 8,
-        right: 8,
-        background: "rgba(255,255,255,0.08)",
+        top: 20,
+        left: 8,
+        background: "rgba(0,0,0,0.8)",
         color: "#fff",
         border: "none",
         padding: "6px 10px",
@@ -203,12 +203,16 @@ export default function Algo() {
               href={openUrl}
               target="_blank"
               rel="noopener noreferrer"
-              style={styles.btn}
+              style={{ ...styles.btn, ...styles.btnPrimary }}
             >
               Open
             </a>
 
-            <a href={downloadUrl} download style={styles.btn}>
+            <a
+              href={downloadUrl}
+              download
+              style={{ ...styles.btn, ...styles.btnPrimary }}
+            >
               Download
             </a>
           </div>
@@ -519,22 +523,50 @@ export default function Algo() {
               textAlign: "center",
               width: "100%",
               padding: "20px 10px 0 10px",
+
+              fontSize: " clamp(1.2rem, 4vw, 2rem)",
             }}
           >
             <YouTubeIcon /> YouTube Explanation
           </h1>
 
-          <div style={{ padding: "0 10px", display: "grid", gap: 12 }}>
-            <YouTubeResource
-              title="Dr.Sahar"
-              embedUrl="https://www.youtube.com/embed/NQ5dTqPOvk0?si=F7o-H6e6UMH5RjBI"
-            />
-            <YouTubeResource
-              title="Dr.Ahmad"
-              embedUrl="https://www.youtube.com/embed/ip3Tmg0rjLQ?si=II5PRblq5ElixIfZ"
-            />
+          <div
+            style={{
+              padding: "0 10px",
+              display: "grid",
+              gap: 20,
+              gridTemplateColumns: "1fr", // full width for each video
+            }}
+          >
+            <div
+              style={{
+                width: "100%",
+                maxWidth: 900,
+                margin: "0 auto",
+                aspectRatio: "16/9",
+              }}
+            >
+              <YouTubeResource
+                title="Dr.Sahar"
+                embedUrl="https://www.youtube.com/embed/NQ5dTqPOvk0?si=F7o-H6e6UMH5RjBI"
+                style={{ width: "100%", height: "100%" }}
+              />
+            </div>
+            <div
+              style={{
+                width: "100%",
+                maxWidth: 900,
+                margin: "0 auto",
+                aspectRatio: "16/9",
+              }}
+            >
+              <YouTubeResource
+                title="Dr.Ahmad"
+                embedUrl="https://www.youtube.com/embed/ip3Tmg0rjLQ?si=II5PRblq5ElixIfZ"
+                style={{ width: "100%", height: "100%" }}
+              />
+            </div>
           </div>
-
           <h1
             style={{
               textAlign: "center",
