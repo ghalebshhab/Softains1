@@ -1,6 +1,6 @@
 import React from "react";
 
-const BookCard = ({ title, link }) => {
+const BookCard = ({ title, link, name }) => {
   // Construct Google Drive URLs from the given link
   const fileId = link.split("/d/")[1]?.split("/")[0]; // Extract file ID
   const previewUrl = `https://drive.google.com/file/d/${fileId}/preview`;
@@ -82,7 +82,7 @@ const BookCard = ({ title, link }) => {
 
   return (
     <div style={styles.container}>
-      <h1 style={{ marginBottom: "2%" }}>Book</h1>
+      <h1 style={{ marginBottom: "2%" }}>{name}</h1>
       <iframe
         src={previewUrl}
         title={title}
