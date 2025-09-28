@@ -197,7 +197,7 @@ export default function Software() {
               style={{
                 display: "inline-block",
                 padding: "10px 20px",
-                background: "#000",
+                background: "transparent",
                 color: "#fff",
                 borderRadius: "6px",
                 textDecoration: "none",
@@ -219,7 +219,7 @@ export default function Software() {
               style={{
                 display: "inline-block",
                 padding: "10px 20px",
-                background: "#000",
+                background: "transparent",
                 color: "#fff",
                 borderRadius: "6px",
                 textDecoration: "none",
