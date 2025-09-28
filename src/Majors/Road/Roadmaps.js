@@ -39,6 +39,15 @@ import andro from "./Images/android.png";
 import front from "./Images/front-end-programming.png";
 import vue from "./Images/Vue.png";
 import Ang from "./Images/Angular.png";
+import frame from "./Images/framework.png";
+import back from "./Images/backend.png";
+import springLogo from "./Images/java.png";
+import nodeLogo from "./Images/Node.png";
+import pythonLogo from "./Images/python.png";
+import mongoLogo from "./Images/mongo.png";
+import postgresLogo from "./Images/postgre.png";
+import mysqlLogo from "./Images/mysql.png";
+import db from "./Images/database.png";
 export default function Roadmaps() {
   const prog = [
     {
@@ -49,6 +58,7 @@ export default function Roadmaps() {
       youtubeLink: "https://youtu.be/6QAELgirvjs?si=o2YA2we15EQGLMLF",
       w3Link: "https://www.w3schools.com/html/default.asp",
       more: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+      id: 1,
     },
     {
       name: "Css",
@@ -58,6 +68,7 @@ export default function Roadmaps() {
       youtubeLink: "https://www.youtube.com/watch?v=X1ulCwyhCVM",
       w3Link: "https://www.w3schools.com/css/default.asp",
       more: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+      id: 2,
     },
     {
       name: "Java Script",
@@ -67,7 +78,10 @@ export default function Roadmaps() {
       youtubeLink: "https://youtu.be/TbHeHAyAV7Q?si=GyUvd5O4EJzwX7Hm",
       w3Link: "https://www.w3schools.com/js/default.asp",
       more: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+      id: 3,
     },
+  ];
+  const frames = [
     {
       name: "React Js",
       photo: Reac,
@@ -76,6 +90,7 @@ export default function Roadmaps() {
       youtubeLink: "https://youtu.be/ihRRf3EjTV8?si=w0stFK_NmgfKNbZt",
       w3Link: "https://www.w3schools.com/react/default.asp",
       more: "https://react.dev/",
+      id: 4,
     },
     {
       name: "Vue Js",
@@ -85,6 +100,7 @@ export default function Roadmaps() {
       youtubeLink: "https://youtu.be/ihRRf3EjTV8?si=w0stFK_NmgfKNbZt",
       w3Link: "https://www.w3schools.com/react/default.asp",
       more: "https://vuejs.org",
+      id: 5,
     },
     {
       name: "Angular Js",
@@ -94,8 +110,74 @@ export default function Roadmaps() {
       youtubeLink: "https://youtu.be/ihRRf3EjTV8?si=w0stFK_NmgfKNbZt",
       w3Link: "https://www.w3schools.com/react/default.asp",
       more: "https://angular.dev",
+      id: 6,
     },
   ];
+  const backs = [
+    {
+      name: "Python (Django)",
+      photo: pythonLogo, // ضع صورة شعار بايثون
+      col: "linear-gradient(135deg, #3776ab, #ffd43b)",
+      desc: "إطار عمل قوي وشامل بلغة بايثون لتطوير تطبيقات الويب بسرعة وكفاءة",
+      youtubeLink: "https://youtu.be/F5mRW0jo-U4",
+      w3Link: "https://www.w3schools.com/django/",
+      more: "https://www.djangoproject.com/",
+      id: 1,
+    },
+    {
+      name: "Java (Spring Boot)",
+      photo: springLogo, // ضع صورة شعار Spring Boot
+      col: "linear-gradient(135deg, #e76f00, #5382a1)",
+      desc: "إطار عمل مرن وشائع بلغة جافا لبناء تطبيقات ويب قوية وقابلة للتوسع",
+      youtubeLink: "https://youtu.be/vtPkZShrvXQ",
+      w3Link: "https://www.w3schools.com/java/",
+      more: "https://spring.io/projects/spring-boot",
+      id: 2,
+    },
+    {
+      name: "Node.js (Express)",
+      photo: nodeLogo, // ضع صورة شعار Node.js
+      col: "linear-gradient(135deg, #68a063, #3c873a)",
+      desc: "     لبناء تطبيقات خادم سريعة وخفيفة باستخدام يئة تشغيل تعتمد على اكسبريس جافا سكريبت",
+      youtubeLink: "https://youtu.be/Oe421EPjeBE",
+      w3Link: "https://www.w3schools.com/nodejs/",
+      more: "https://expressjs.com/",
+      id: 3,
+    },
+  ];
+  const databases = [
+    {
+      name: "MongoDB",
+      photo: mongoLogo, // ضع صورة شعار مونغو دي بي
+      col: "linear-gradient(135deg, #FFD700, #000000, #1E90FF)",
+      desc: "قاعدة بيانات غير علائقية مرنة تعتمد على الوثائق وتُستخدم بكثرة مع تطبيقات الويب الحديثة",
+      youtubeLink: "https://youtu.be/-56x56UppqQ",
+      w3Link: "https://www.w3schools.com/mongodb/",
+      more: "https://www.mongodb.com/",
+      id: 1,
+    },
+    {
+      name: "MySQL",
+      photo: mysqlLogo, // ضع صورة شعار ماي إس كيو إل
+      col: "linear-gradient(135deg, #5A4FCF, #4A90E2);",
+      desc: "نظام لإدارة قواعد البيانات العلائقية مفتوح المصدر ويُستخدم على نطاق واسع في مختلف التطبيقات",
+      youtubeLink: "https://youtu.be/9ylj9NR0Lcg",
+      w3Link: "https://www.w3schools.com/mysql/",
+      more: "https://www.mysql.com/",
+      id: 2,
+    },
+    {
+      name: "PostgreSQL",
+      photo: postgresLogo, // ضع صورة شعار بوستجري إس كيو إل
+      col: "black",
+      desc: "قاعدة بيانات علائقية قوية ومتقدمة تدعم الاستعلامات المعقدة وتتعامل مع البيانات الضخمة بكفاءة عالية",
+      youtubeLink: "https://youtu.be/qw--VYLpxG4",
+      w3Link: "https://www.w3schools.com/postgresql/",
+      more: "https://www.postgresql.org/",
+      id: 3,
+    },
+  ];
+
   const an = [
     {
       name: "Android",
@@ -317,38 +399,388 @@ export default function Roadmaps() {
                   </div>
                 ))}
               </div>
-            </div>
-          </div>
-          <div className="roads">
-            <h1 style={{ textAlign: "center" }}>Android</h1>
-            <div className="web">
-              {an.map((a) => {
-                return (
-                  <div className="Lang">
-                    <Card>
-                      <CardActionArea />
-                      <CardMedia
-                        component="img"
-                        image={a.photo}
-                        alt={a.name}
-                        sx={{
-                          objectFit: "cover",
-                          objectPosition: "center",
-                          width: "100%",
-                          height: "50%",
-                        }}
-                      />
-                      <Typography
-                        variant="h3"
-                        sx={{ color: "black", textAlign: "center" }}
-                      >
-                        {a.name}
-                      </Typography>
-                      <Typography>{a.desc}</Typography>
+              <h1
+                style={{
+                  marginBottom: "3%",
+                  display: "flex",
+                  alignItems: "center",
+                  textAlign: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <img
+                  src={frame}
+                  alt="icon"
+                  style={{
+                    width: "50px",
+                    height: "50px",
+                    borderRadius: "50%",
+                    marginRight: "10px",
+                  }}
+                />
+                Frame Works
+              </h1>
+              <div className="web">
+                {frames.map((p) => (
+                  <div className="Lang" key={p.id}>
+                    {" "}
+                    {/* Always add a key prop */}
+                    <Card
+                      sx={{
+                        width: "100%",
+                        maxWidth: 300,
+                        backgroundColor: "",
+                        color: "black",
+                      }}
+                    >
+                      <CardActionArea>
+                        <CardMedia
+                          component="img"
+                          image={p.photo}
+                          alt={p.name}
+                          sx={{
+                            objectFit: "cover",
+                            objectPosition: "center",
+                            width: "100%",
+                            height: "50%", // Fixed height for consistency
+                          }}
+                        />
+                        <CardContent>
+                          <Typography
+                            gutterBottom
+                            variant="h5"
+                            component="div"
+                            sx={{ color: "black" }}
+                          >
+                            {p.name}
+                          </Typography>
+                          <Typography sx={{ color: "black", mb: 2 }}>
+                            {p.desc}
+                          </Typography>
+
+                          {/* Links as Chips */}
+                          <Box
+                            sx={{
+                              display: "flex",
+                              flexDirection: "column",
+                              gap: 1,
+                              mb: 2,
+                            }}
+                          >
+                            <a
+                              href={p.youtubeLink}
+                              target="_blank"
+                              style={{ textDecoration: "none" }}
+                            >
+                              <Button
+                                variant="outlined"
+                                startIcon={<YouTubeIcon />}
+                                sx={{
+                                  borderColor: "black",
+                                  color: "black",
+                                  "&:hover": {
+                                    background: p.col,
+                                    color: "white",
+                                  },
+                                }}
+                              >
+                                YouTube
+                              </Button>
+                            </a>
+
+                            <a
+                              href={p.w3Link}
+                              target="_blank"
+                              style={{ textDecoration: "none" }}
+                            >
+                              <Button
+                                variant="outlined"
+                                startIcon={<LanguageIcon />}
+                                sx={{
+                                  borderColor: "black",
+                                  color: "black",
+                                  "&:hover": {
+                                    background: p.col,
+                                    color: "white",
+                                  },
+                                }}
+                              >
+                                W3Schools
+                              </Button>
+                            </a>
+                          </Box>
+
+                          <Button
+                            variant="contained"
+                            sx={{ background: p.col, width: "100%" }}
+                            onClick={() => {
+                              window.open(p.more, "_blank");
+                            }}
+                          >
+                            Learn More
+                          </Button>
+                        </CardContent>
+                      </CardActionArea>
                     </Card>
                   </div>
-                );
-              })}
+                ))}
+              </div>
+            </div>
+            <div className="roads">
+              <h1
+                style={{
+                  marginBottom: "3%",
+                  display: "flex",
+                  alignItems: "center",
+                  textAlign: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <img
+                  src={db}
+                  alt="icon"
+                  style={{
+                    width: "50px",
+                    height: "50px",
+                    borderRadius: "50%",
+                    marginRight: "10px",
+                  }}
+                />
+                Data Base
+              </h1>
+              <div className="web">
+                {databases.map((p) => (
+                  <div className="Lang" key={p.id}>
+                    {" "}
+                    {/* Always add a key prop */}
+                    <Card
+                      sx={{
+                        width: "100%",
+                        maxWidth: 300,
+                        backgroundColor: "",
+                        color: "black",
+                      }}
+                    >
+                      <CardActionArea>
+                        <CardMedia
+                          component="img"
+                          image={p.photo}
+                          alt={p.name}
+                          sx={{
+                            objectFit: "cover",
+                            objectPosition: "center",
+                            width: "100%",
+                            height: "50%", // Fixed height for consistency
+                          }}
+                        />
+                        <CardContent>
+                          <Typography
+                            gutterBottom
+                            variant="h5"
+                            component="div"
+                            sx={{ color: "black" }}
+                          >
+                            {p.name}
+                          </Typography>
+                          <Typography sx={{ color: "black", mb: 2 }}>
+                            {p.desc}
+                          </Typography>
+
+                          {/* Links as Chips */}
+                          <Box
+                            sx={{
+                              display: "flex",
+                              flexDirection: "column",
+                              gap: 1,
+                              mb: 2,
+                            }}
+                          >
+                            <a
+                              href={p.youtubeLink}
+                              target="_blank"
+                              style={{ textDecoration: "none" }}
+                            >
+                              <Button
+                                variant="outlined"
+                                startIcon={<YouTubeIcon />}
+                                sx={{
+                                  borderColor: "black",
+                                  color: "black",
+                                  "&:hover": {
+                                    background: p.col,
+                                    color: "white",
+                                  },
+                                }}
+                              >
+                                YouTube
+                              </Button>
+                            </a>
+
+                            <a
+                              href={p.w3Link}
+                              target="_blank"
+                              style={{ textDecoration: "none" }}
+                            >
+                              <Button
+                                variant="outlined"
+                                startIcon={<LanguageIcon />}
+                                sx={{
+                                  borderColor: "black",
+                                  color: "black",
+                                  "&:hover": {
+                                    background: p.col,
+                                    color: "white",
+                                  },
+                                }}
+                              >
+                                W3Schools
+                              </Button>
+                            </a>
+                          </Box>
+
+                          <Button
+                            variant="contained"
+                            sx={{ background: p.col, width: "100%" }}
+                            onClick={() => {
+                              window.open(p.more, "_blank");
+                            }}
+                          >
+                            Learn More
+                          </Button>
+                        </CardContent>
+                      </CardActionArea>
+                    </Card>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="roads">
+              <h1
+                style={{
+                  marginBottom: "3%",
+                  display: "flex",
+                  alignItems: "center",
+                  textAlign: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <img
+                  src={back}
+                  alt="icon"
+                  style={{
+                    width: "50px",
+                    height: "50px",
+                    borderRadius: "50%",
+                    marginRight: "10px",
+                  }}
+                />
+                Back End
+              </h1>
+              <div className="web">
+                {backs.map((p) => (
+                  <div className="Lang" key={p.id}>
+                    {" "}
+                    {/* Always add a key prop */}
+                    <Card
+                      sx={{
+                        width: "100%",
+                        maxWidth: 300,
+                        backgroundColor: "",
+                        color: "black",
+                      }}
+                    >
+                      <CardActionArea>
+                        <CardMedia
+                          component="img"
+                          image={p.photo}
+                          alt={p.name}
+                          sx={{
+                            objectFit: "cover",
+                            objectPosition: "center",
+                            width: "100%",
+                            height: "50%", // Fixed height for consistency
+                          }}
+                        />
+                        <CardContent>
+                          <Typography
+                            gutterBottom
+                            variant="h5"
+                            component="div"
+                            sx={{ color: "black" }}
+                          >
+                            {p.name}
+                          </Typography>
+                          <Typography sx={{ color: "black", mb: 2 }}>
+                            {p.desc}
+                          </Typography>
+
+                          {/* Links as Chips */}
+                          <Box
+                            sx={{
+                              display: "flex",
+                              flexDirection: "column",
+                              gap: 1,
+                              mb: 2,
+                            }}
+                          >
+                            <a
+                              href={p.youtubeLink}
+                              target="_blank"
+                              style={{ textDecoration: "none" }}
+                            >
+                              <Button
+                                variant="outlined"
+                                startIcon={<YouTubeIcon />}
+                                sx={{
+                                  borderColor: "black",
+                                  color: "black",
+                                  "&:hover": {
+                                    background: p.col,
+                                    color: "white",
+                                  },
+                                }}
+                              >
+                                YouTube
+                              </Button>
+                            </a>
+
+                            <a
+                              href={p.w3Link}
+                              target="_blank"
+                              style={{ textDecoration: "none" }}
+                            >
+                              <Button
+                                variant="outlined"
+                                startIcon={<LanguageIcon />}
+                                sx={{
+                                  borderColor: "black",
+                                  color: "black",
+                                  "&:hover": {
+                                    background: p.col,
+                                    color: "white",
+                                  },
+                                }}
+                              >
+                                W3Schools
+                              </Button>
+                            </a>
+                          </Box>
+
+                          <Button
+                            variant="contained"
+                            sx={{ background: p.col, width: "100%" }}
+                            onClick={() => {
+                              window.open(p.more, "_blank");
+                            }}
+                          >
+                            Learn More
+                          </Button>
+                        </CardContent>
+                      </CardActionArea>
+                    </Card>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
