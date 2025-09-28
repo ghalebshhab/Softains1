@@ -86,17 +86,17 @@ export default function Roadmaps() {
       name: "React Js",
       photo: Reac,
       col: "linear-gradient(135deg, #61dafb, #21a1f1)",
-      desc: "مكتبة جافاسكربت لبناء واجهات مستخدم تفاعلية وسريعة",
+      desc: "مكتبة جافاسكربت مفتوحة المصدر تُستخدم لبناء واجهات مستخدم تفاعلية وسريعة، تعتمد على مكوّنات قابلة لإعادة الاستخدام لتسهيل تطوير تطبيقات الويب الحديثة",
       youtubeLink: "https://youtu.be/ihRRf3EjTV8?si=w0stFK_NmgfKNbZt",
       w3Link: "https://www.w3schools.com/react/default.asp",
       more: "https://react.dev/",
       id: 4,
     },
     {
-      name: "Vue Js",
+      name: "Vue ",
       photo: vue,
       col: "linear-gradient(135deg, #42b883, #35495e)",
-      desc: "إطار عمل خفيف وتدريجي   لبناء واجهات المستخدم وتطبيقات الويب أحادية الصفحة",
+      desc: "إطار عمل خفيف ومرن لتطوير واجهات المستخدم، يتميز بسهولة التعلّم والبناء التدريجي مما يجعله مناسباً للتطبيقات الصغيرة والكبيرة",
       youtubeLink: "https://youtu.be/ihRRf3EjTV8?si=w0stFK_NmgfKNbZt",
       w3Link: "https://www.w3schools.com/react/default.asp",
       more: "https://vuejs.org",
@@ -106,7 +106,7 @@ export default function Roadmaps() {
       name: "Angular Js",
       photo: Ang,
       col: "linear-gradient(135deg, #dd0031, #c3002f)",
-      desc: "إطار عمل قوي    لتطوير تطبيقات ويب كبيرة وديناميكية",
+      desc: "إطار عمل قوي وشامل من جافاسكربت يُستخدم لبناء تطبيقات ويب كبيرة وديناميكية، يتميز بدعم متكامل للأدوات وهيكلية واضحة تسهّل إدارة المشاريع",
       youtubeLink: "https://youtu.be/ihRRf3EjTV8?si=w0stFK_NmgfKNbZt",
       w3Link: "https://www.w3schools.com/react/default.asp",
       more: "https://angular.dev",
@@ -119,17 +119,17 @@ export default function Roadmaps() {
       photo: pythonLogo, // ضع صورة شعار بايثون
       col: "linear-gradient(135deg, #3776ab, #ffd43b)",
       desc: "إطار عمل قوي وشامل بلغة بايثون لتطوير تطبيقات الويب بسرعة وكفاءة",
-      youtubeLink: "https://youtu.be/F5mRW0jo-U4",
+      youtubeLink: "https://youtu.be/mvZHDpCHphk?si=O6pF8n8Pg1VixC2Z",
       w3Link: "https://www.w3schools.com/django/",
       more: "https://www.djangoproject.com/",
       id: 1,
     },
     {
-      name: "Java (Spring Boot)",
+      name: `Spring Boot`,
       photo: springLogo, // ضع صورة شعار Spring Boot
       col: "linear-gradient(135deg, #e76f00, #5382a1)",
       desc: "إطار عمل مرن وشائع بلغة جافا لبناء تطبيقات ويب قوية وقابلة للتوسع",
-      youtubeLink: "https://youtu.be/vtPkZShrvXQ",
+      youtubeLink: "https://youtu.be/gJrjgg1KVL4?si=LAsODE3n51-1cxf-",
       w3Link: "https://www.w3schools.com/java/",
       more: "https://spring.io/projects/spring-boot",
       id: 2,
@@ -139,7 +139,7 @@ export default function Roadmaps() {
       photo: nodeLogo, // ضع صورة شعار Node.js
       col: "linear-gradient(135deg, #68a063, #3c873a)",
       desc: "     لبناء تطبيقات خادم سريعة وخفيفة باستخدام يئة تشغيل تعتمد على اكسبريس جافا سكريبت",
-      youtubeLink: "https://youtu.be/Oe421EPjeBE",
+      youtubeLink: "https://youtu.be/LG7ff9TVWjM?si=_ibMabOVCK5qGIMK",
       w3Link: "https://www.w3schools.com/nodejs/",
       more: "https://expressjs.com/",
       id: 3,
@@ -552,7 +552,6 @@ export default function Roadmaps() {
                 {databases.map((p) => (
                   <div className="Lang" key={p.id}>
                     {" "}
-                    {/* Always add a key prop */}
                     <Card
                       sx={{
                         width: "100%",

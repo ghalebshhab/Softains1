@@ -20,9 +20,62 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import Header from "../Header";
 import "./soft.css";
 import App from "../App";
+import Button from "../Animation/Butto";
 export default function Software() {
   const subjects = [
     // إجباري كلية
+    { name: "C++ & Lab", path: "Cplus" },
+    {
+      name: "Java 1 & Lab",
+      path: "/Java",
+      youtube: "https://youtu.be/L_W07rp4-2c?si=E_VkUDoRS--TNCRU",
+    },
+    { name: "Data Structures", path: "dataStructures" },
+    { name: "Visual Programming", path: "visualProgramming" },
+    { name: "Software", path: "softwared" },
+    { name: "SPM", path: "spm" },
+    { name: "UML", path: "uml" },
+    { name: "Web", path: "web" },
+    { name: "Documentation", path: "documentation" },
+    { name: "Design", path: "design" },
+    { name: "Testing", path: "testing" },
+    { name: "Requirements", path: "requirements" },
+    { name: "Measurement", path: "measurement" },
+    { name: "Quality", path: "quality" },
+    { name: "Maintanance", path: "maintanance" },
+
+    // إجباري تخصص
+    { name: "Java Advance", path: "javaAdvance" },
+    { name: "Database & Lab", path: "database" },
+    { name: "Algorithms", path: "algorithms" },
+    { name: "Security", path: "security" },
+    { name: "AI", path: "ai" },
+    { name: "Analysis", path: "analysis" },
+    { name: "Cloud Computing", path: "cloud" },
+    { name: "Android", path: "android" },
+    { name: "GUI", path: "gui" },
+
+    // اختياري تخصص
+    { name: "Network", path: "network" },
+    { name: "Operating System", path: "os" },
+    { name: "IoT Security", path: "iotSecurity" },
+    { name: "ORG ", path: "org" },
+
+    // مواد من كليات اخرى
+    { name: "Calculus 1", path: "calc" },
+    { name: "Statistics", path: "statistics" },
+    { name: "Linear 1", path: "linear" },
+    { name: "Numerical", path: "numerical" },
+    { name: "Discrete", path: "discrete" },
+    { name: "Logic", path: "logic" },
+
+    // بعد 80 ساعة
+    { name: "Graduation project 1", path: "grad1" },
+    { name: "Graduation project 2", path: "grad2" },
+    { name: "Special topics", path: "spi" },
+    { name: "Internship", path: "intern" },
+  ];
+  const pages = [
     { name: "C++ & Lab" },
     { name: "Java 1 & Lab" },
     { name: "Data Structures", path: "dataStructures" },
@@ -138,12 +191,43 @@ export default function Software() {
                 marginTop: "2%",
               }}
             />
+            <a
+              href={Logo}
+              download="Software-Plan Dark.jpg" // Name the file for download
+              style={{
+                display: "inline-block",
+                padding: "10px 20px",
+                background: "#000",
+                color: "#fff",
+                borderRadius: "6px",
+                textDecoration: "none",
+                fontWeight: "600",
+              }}
+            >
+              <Button />
+            </a>
+
             <img
               src={Logo1}
               alt="Logo"
               width="80%"
               style={{ borderRadius: "10%" }}
             />
+            <a
+              href={Logo1}
+              download="Software-Plan Light.jpg" // Name the file for download
+              style={{
+                display: "inline-block",
+                padding: "10px 20px",
+                background: "#000",
+                color: "#fff",
+                borderRadius: "6px",
+                textDecoration: "none",
+                fontWeight: "600",
+              }}
+            >
+              <Button />
+            </a>
             <hr style={{ marginBottom: "2%", marginTop: "2%", width: "90%" }} />
 
             <div className="Subjects">{subs}</div>

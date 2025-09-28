@@ -130,14 +130,14 @@ export default function Test3() {
             <div className="majors-grid" style={{ width: "70%" }}>
               <div className="major-card">
                 <h3>
-                  <a href="/About" target="_blank" title="About Us">
+                  <Link to="/About">
                     <SpotlightCard
                       className="custom-spotlight-card"
                       spotlightColor="rgba(0, 229, 255, 0.2)"
                     >
                       More About US
                     </SpotlightCard>
-                  </a>
+                  </Link>
                 </h3>
               </div>
             </div>
@@ -146,11 +146,7 @@ export default function Test3() {
               <div className="major-card">
                 <h3>
                   {" "}
-                  <Link
-                    to="/Software"
-                    target="blank"
-                    title="Go to Software Page"
-                  >
+                  <Link to="/Software" title="Go to Software Page">
                     {" "}
                     <SpotlightCard
                       style={{ alignSelf: "center", width: "30vw" }}
@@ -163,36 +159,30 @@ export default function Test3() {
                 </h3>
               </div>
             </div>
+            <div className="majors-grid" style={{ width: "70%" }}>
+              <div className="major-card">
+                <h3>
+                  {" "}
+                  <Link to="/roadmaps" title="Go to Software Page">
+                    {" "}
+                    <SpotlightCard
+                      style={{ alignSelf: "center", width: "30vw" }}
+                      className="custom-spotlight-card"
+                      spotlightColor="rgba(0, 229, 255, 0.2)"
+                    >
+                      Our RoadMaps
+                    </SpotlightCard>
+                  </Link>
+                </h3>
+              </div>
+            </div>
           </section>
           <div>
             <VisitorCounter />
           </div>
+
           <Sapp />
-          <div
-            style={{
-              textAlign: "center",
-              display: "flex",
-              justifyContent: "center",
-              alignContent: "center",
-              alignItems: "center",
-              height: "90vh",
-              flexDirection: "column",
-            }}
-          >
-            {" "}
-            <h3 style={{ textAlign: "center", marginBottom: "1%" }}>
-              <Link to="/roadmaps">
-                <SpotlightCard
-                  style={{ alignSelf: "center" }}
-                  className="custom-spotlight-card"
-                  spotlightColor="rgba(0, 229, 255, 0.2)"
-                >
-                  Our RoadMaps
-                </SpotlightCard>
-              </Link>
-            </h3>
-            <div className="ro"></div>
-          </div>
+
           <div className="contact">
             <h3 style={{ textAlign: "center" }}>Contact US :</h3>
             <div

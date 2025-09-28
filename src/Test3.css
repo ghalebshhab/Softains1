@@ -54,20 +54,7 @@
   word-wrap: break-word;
   max-width: 100%;
 }
-.ro{
-    background-image: url("./Road2.png");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    border: 1px solid white;
-    border-radius: 12%;
-    -webkit-border-radius: 12%;
-    -moz-border-radius: 12%;
-    -ms-border-radius: 12%;
-    -o-border-radius: 12%;
-    width: 30%;
-    height: 100%;
-}
+
 
 /* Mobile specific adjustments */
 @media (max-width: 768px) {

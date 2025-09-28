@@ -84,8 +84,11 @@ export default function Algo() {
             >
               وصف المادة
             </h1>
-            <h4>Description</h4>
-            <hr style={{ width: "80%" }} />
+            <h4>
+              دراسة طرق حل المشكلات بكفاءة باستخدام الخوارزميات، وفهم طرق
+              التحليل وتصميم الحلول البرمجية
+            </h4>
+
             <h1
               style={{
                 direction: "rtl",
@@ -95,8 +98,8 @@ export default function Algo() {
             >
               الأفاريج
             </h1>
-            <h4>Description</h4>
-            <hr style={{ width: "80%" }} />
+            <h4>ال أ+ ما بتنزل عن ال 90</h4>
+
             <h1
               style={{
                 direction: "rtl",
@@ -106,7 +109,30 @@ export default function Algo() {
             >
               المصادر
             </h1>
-            <h4>Description</h4>
+            <h4>
+              <a
+                href="https://drive.google.com/file/d/1fVjbYIDlEnBMawcHLk2VeEl6qDze59jl/view?usp=drive_link"
+                target="_blank"
+              >
+                Book
+              </a>
+            </h4>
+            <h4>
+              <a
+                href="https://drive.google.com/drive/folders/1z_SyMltqIwsR13MBV4Rzvj3xvJVAUpbK?usp=drive_link"
+                target="_blank"
+              >
+                Dr.Sahar Slides
+              </a>
+            </h4>
+            <h4>
+              <a
+                href="https://drive.google.com/drive/folders/1LcXNdDfbVEUsxP9FyNPbMnVekv9Ypyvz?usp=drive_link"
+                target="_blank"
+              >
+                Dr.Ahmad Slides
+              </a>
+            </h4>
             <hr style={{ width: "80%" }} />
             <h1
               style={{
@@ -117,7 +143,14 @@ export default function Algo() {
             >
               قروب المادة
             </h1>
-            <h4>Description</h4>
+            <h4>
+              <a
+                href="https://chat.whatsapp.com/IkltvLoGncHD3w4gDA5j0E"
+                target="_blank"
+              >
+                View Group
+              </a>
+            </h4>
             <hr style={{ width: "80%" }} />
             <h1
               style={{
@@ -128,7 +161,22 @@ export default function Algo() {
             >
               شرح اليوتيوب
             </h1>
-            <h4>Description</h4>
+            <h4>
+              <a
+                href="https://youtu.be/NQ5dTqPOvk0?si=OqpSe4J41vu8-Zhe"
+                target="_blank"
+              >
+                Dr.Sahar
+              </a>
+            </h4>
+            <h4>
+              <a
+                href="https://youtu.be/ip3Tmg0rjLQ?si=CaJMSS2w2HnrurNT"
+                target="_blank"
+              >
+                Dr.Ahmad
+              </a>
+            </h4>
             <hr style={{ width: "80%" }} />
           </div>
           <hr style={{ marginBottom: "3%" }} />
