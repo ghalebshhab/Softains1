@@ -517,49 +517,41 @@ export default function Algo() {
               </div>
             ))}
           </div>
-
           <h1
             style={{
-              textAlign: "center",
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "0.5rem", // space between icon and text
               width: "100%",
+              textAlign: "center",
               padding: "20px 10px 0 10px",
-
-              fontSize: " clamp(1.2rem, 4vw, 2rem)",
+              fontSize: "clamp(1.2rem, 4vw, 2rem)",
+              fontWeight: 700,
             }}
           >
-            <YouTubeIcon /> YouTube Explanation
+            <YouTubeIcon style={{ fontSize: "1.5em", flexShrink: 0 }} />
+            YouTube Explanation
           </h1>
 
           <div
             style={{
               padding: "0 10px",
-              display: "grid",
+              display: "flex",
+              flexDirection: "column",
               gap: 20,
-              gridTemplateColumns: "1fr", // full width for each video
+              alignItems: "center", // center videos
             }}
           >
-            <div
-              style={{
-                width: "100%",
-                maxWidth: 900,
-                margin: "0 auto",
-                aspectRatio: "16/9",
-              }}
-            >
+            <div style={{ width: "100%", maxWidth: 900, aspectRatio: "16/9" }}>
               <YouTubeResource
                 title="Dr.Sahar"
                 embedUrl="https://www.youtube.com/embed/NQ5dTqPOvk0?si=F7o-H6e6UMH5RjBI"
                 style={{ width: "100%", height: "100%" }}
               />
             </div>
-            <div
-              style={{
-                width: "100%",
-                maxWidth: 900,
-                margin: "0 auto",
-                aspectRatio: "16/9",
-              }}
-            >
+
+            <div style={{ width: "100%", maxWidth: 900, aspectRatio: "16/9" }}>
               <YouTubeResource
                 title="Dr.Ahmad"
                 embedUrl="https://www.youtube.com/embed/ip3Tmg0rjLQ?si=II5PRblq5ElixIfZ"
@@ -567,6 +559,7 @@ export default function Algo() {
               />
             </div>
           </div>
+
           <h1
             style={{
               textAlign: "center",
