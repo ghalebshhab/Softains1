@@ -392,7 +392,7 @@ export default function Algo() {
     },
     grid: {
       display: "grid",
-      gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+      gridTemplateColumns: "repeat(auto-fit, minmax(220px, 3fr))",
       gap: 20,
       padding: "0 10px",
       width: "100%",
@@ -565,6 +565,7 @@ export default function Algo() {
               textAlign: "center",
               width: "100%",
               padding: "20px 10px 0 10px",
+              marginTop: "3%",
             }}
           >
             <WhatsAppIcon /> WhatsApp Group <br />
