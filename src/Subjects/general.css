@@ -1,0 +1,20 @@
+.cards-grid {
+  display: grid;
+  gap: 20px;
+  padding: 0 10px;
+  width: 100%;
+  box-sizing: border-box;
+  grid-template-columns: repeat(2, 1fr); /* default: 2 on phones */
+}
+
+@media (min-width: 768px) {
+  .cards-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 on tablets */
+  }
+}
+
+@media (min-width: 1024px) {
+  .cards-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 on laptops */
+  }
+}

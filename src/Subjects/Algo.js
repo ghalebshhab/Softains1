@@ -13,6 +13,7 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import L from "./img/Algo.png";
 import YouTubeResource from "./Youtube";
 import all from "./img/Softians IT Community/2) Softians IT - اجباري تخصص/20.png";
+import "./general.css";
 
 export default function Algo() {
   // Helper: robustly extract Drive file ID from several link formats
@@ -392,7 +393,7 @@ export default function Algo() {
     },
     grid: {
       display: "grid",
-      gridTemplateColumns: "repeat(auto-fit, minmax(220px, 3fr))",
+      gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
       gap: 20,
       padding: "0 10px",
       width: "100%",
@@ -493,7 +494,7 @@ export default function Algo() {
           <h1 style={{ textAlign: "center", width: "100%", padding: "0 10px" }}>
             Dr.Sahar Slides
           </h1>
-          <div style={pageStyles.grid}>
+          <div className="cards-grid">
             {lectures.map((l) => (
               <div key={l.title}>
                 <PreviewCard title={l.title} link={l.link} name={l.name} />
@@ -510,7 +511,7 @@ export default function Algo() {
           >
             Dr.Ahmad Slides
           </h1>
-          <div style={pageStyles.grid}>
+          <div className="cards-grid">
             {lectures1.map((l) => (
               <div key={l.title}>
                 <PreviewCard title={l.title} link={l.link} name={l.name} />
