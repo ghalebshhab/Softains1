@@ -27,7 +27,7 @@ export default function Software() {
     { name: "C++ & Lab", path: "Cplus" },
     {
       name: "Java 1 & Lab",
-      path: "/Java",
+      path: "Java",
       youtube: "https://youtu.be/L_W07rp4-2c?si=E_VkUDoRS--TNCRU",
     },
     { name: "Data Structures", path: "dataStructures" },
@@ -46,7 +46,8 @@ export default function Software() {
 
     // إجباري تخصص
     { name: "Java Advance", path: "javaAdvance" },
-    { name: "Database & Lab", path: "database" },
+    { name: "Database", path: "database" },
+    { name: "Lab Database", path: "labdb" },
     { name: "Algorithms", path: "algorithms" },
     { name: "Security", path: "security" },
     { name: "AI", path: "ai" },

@@ -10,11 +10,10 @@ import Magnet from "../Animation/Magent";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import YouTubeResource from "./Youtube";
-import all from "./img/Softians IT Community/2) Softians IT - اجباري تخصص/11.png";
-import all2 from "./img/Softians IT Community/2) Softians IT - اجباري تخصص/12.png";
-import L from "./img/java (1).png";
 import { useState } from "react";
-export default function Java() {
+import all from "./img/Softians IT Community/2) Softians IT - اجباري تخصص/16.png";
+import L from "./img/database-file.png";
+export default function Db() {
   // Helper: robustly extract Drive file ID from several link formats
   const getDriveFileId = (url) => {
     if (!url || typeof url !== "string") return null;
@@ -253,49 +252,59 @@ export default function Java() {
   // Data arrays (unchanged) — we'll pass raw links into PreviewCard (it handles extraction)
   const lectures = [
     {
+      title: "Lecture 1",
+      link: "https://drive.google.com/file/d/12lVgGi5vlElujoZXCUdqdTTvdOKA8Cgy/view?usp=drive_link",
+      name: "DB & DB Users",
+    },
+    {
       title: "Lecture 2",
-      link: "https://drive.google.com/file/d/1tv3GeAYYILIsqvpsAJbTSneGu9fc1iCV/view?usp=drive_link",
-      name: "Elementary",
+      link: "https://drive.google.com/file/d/1HFz9nh4RIincovLqXkNv88rQY_z3ozig/view?usp=drive_link",
+      name: "Relational Model",
     },
     {
       title: "Lecture 3",
-      link: "https://drive.google.com/file/d/1GFPGJHlkqwhFwWvgdfB8NBTOVj8mkgls/view?usp=drive_link",
-      name: "Selections",
+      link: "https://drive.google.com/file/d/1RNBH0anV6AWB9EeNN5kkqhGzN4A_XGxQ/view?usp=drive_link",
+      name: "ER",
     },
     {
       title: "Lecture 4",
-      link: "https://drive.google.com/file/d/1L8Adbl6uAgEr6NdJtmcErCFlOVZwjhtT/view?usp=drive_link",
-      name: "Strings & I/O",
+      link: "https://drive.google.com/file/d/1wf37e-o0m7kckpDLaKUvH2iZWZEvF1mR/view?usp=drive_link",
+      name: "EER",
     },
     {
       title: "Lecture 5",
-      link: "https://drive.google.com/file/d/13_3oMnNtdXOySFgcp8syONWnx3Bg6pp1/view?usp=drive_link",
-      name: "Loops",
+      link: "https://drive.google.com/file/d/1d3T9LCcZ2Qci4D3z9d_Ps4MiBNJljFjD/view?usp=drive_link",
+      name: "Relational Mapping",
     },
     {
       title: "Lecture 6.1",
-      link: "https://drive.google.com/file/d/1j7LqRRgmCHautJcUFnIXIqTVbRrUZ755/view?usp=drive_link",
-      name: "Methods",
+      link: "https://drive.google.com/file/d/1VAJcvZsNiubjatugJic9H7QzbKT2krnc/view?usp=drive_link",
+      name: "Functional Dependence",
     },
     {
       title: "Lecture 6.2",
-      link: "https://drive.google.com/file/d/1xdsHTBqxPqx0OzcFIPGopB8uchTu8FdB/view?usp=drive_link",
-      name: "Math Method",
+      link: "https://drive.google.com/file/d/1HEDyPsly7eTg9vt6RbPWY7tkXsPfi32b/view?usp=drive_link",
+      name: "Closure Keys",
     },
     {
       title: "Lecture 7",
-      link: "https://drive.google.com/file/d/1E4bMcBUsd9p5OtxXFH_6sQYHhAHw_pt7/view?usp=drive_link",
-      name: "Arrays",
+      link: "https://drive.google.com/file/d/1F8AdP0Q9owzirvU4LjxzKNJ6EPNkaMhf/view?usp=drive_link",
+      name: "SQL DDl",
     },
     {
       title: "Lecture 8",
-      link: "https://drive.google.com/file/d/1QwvtVooUxPkh4HXmcjs8D3UPJnHoYXqY/view?usp=drive_link",
-      name: "Multidiminsion Array",
+      link: "https://drive.google.com/file/d/18BO0OD3ZsBOWNfpYshzXI2oA03QOX0IU/view?usp=drive_link",
+      name: "SQL DML",
     },
     {
-      title: "Lecture 9",
-      link: "https://drive.google.com/file/d/1KrxTJR74R7b5_Ll1r6VDPyBCcWlXJkdt/view?usp=drive_link",
-      name: "Class & Objects",
+      title: "Lecture 9.1",
+      link: "https://drive.google.com/file/d/1UtOcD1dvj0NnM3Ps3xX9hrdR0Igfee11/view?usp=drive_link",
+      name: "Normalaization",
+    },
+    {
+      title: "Lecture 9.2",
+      link: "https://drive.google.com/file/d/1fEZ6PA7avxTwg52OFMiAf_RYydQenZ1W/view?usp=drive_link",
+      name: "Normalaization",
     },
   ];
 
@@ -383,7 +392,7 @@ export default function Java() {
                 duration={400}
               >
                 <BlurText
-                  text="Java 1 & Lab"
+                  text="Lab Data Base "
                   delay={150}
                   animateBy="letters"
                   direction="top"
@@ -406,32 +415,44 @@ export default function Java() {
             }}
           >
             <PreviewCard
-              title="Java 1"
-              link="https://drive.google.com/file/d/16PUtsYl-cKky02arhbbeTPGRGNKntCtr/view?usp=drive_link"
+              title="Data Base"
+              link="https://drive.google.com/file/d/1LtLTmOnfk18YpCrl5qrOSLIJoCmrMLMC/view?usp=drive_link"
               name="Book"
             />
           </div>
 
           <h1 style={{ textAlign: "center", width: "100%", padding: "0 10px" }}>
-            Chapters
+            Lab Sheet
           </h1>
-          <div className="cards-grid">
-            {lectures.map((l) => (
-              <div key={l.title}>
-                <PreviewCard title={l.title} link={l.link} name={l.name} />
-              </div>
-            ))}
-          </div>
+          <PreviewCard
+            title={"Lab Sheet"}
+            link="https://drive.google.com/file/d/1FhyLDHHiJy2RRrZLJth-X00OPlCixLzO/view?usp=drive_link"
+            name=""
+          />
           <h1 style={{ textAlign: "center", width: "100%", padding: "0 10px" }}>
-            Lap Sheet
+            Lab Sheet Solution
           </h1>
-          <div>
-            <PreviewCard
-              title={"Lap Sheet"}
-              link="https://drive.google.com/file/d/1YkxOTxYiwD9YUs_IEnEIJZViYwSnexeo/view?usp=drive_link"
-              name=""
-            />
-          </div>
+          <PreviewCard
+            title={"Lab Sheet Solutions"}
+            link="https://drive.google.com/file/d/1t2nEXuyCjUaGnYveEAAW_MYWfb3wzmC3/view?usp=drive_link"
+            name=""
+          />
+          <h1 style={{ textAlign: "center", width: "100%", padding: "0 10px" }}>
+            Extra Sheet
+          </h1>
+          <PreviewCard
+            title={"Extra Sheet"}
+            link="https://docs.google.com/document/d/1rkIIA_PskgSWqU6ANDeGFULsP3AWs771/edit?usp=drive_link&ouid=110731891960842495908&rtpof=true&sd=true"
+            name=""
+          />
+          <h1 style={{ textAlign: "center", width: "100%", padding: "0 10px" }}>
+            Extra Sheet Solution
+          </h1>
+          <PreviewCard
+            title={"Extra Sheet Solution"}
+            link="https://drive.google.com/file/d/14DYvY4OWqoiszh_ygexuxKEoYCbZVzKs/view?usp=drive_link"
+            name=""
+          />
 
           <h1
             style={{
@@ -461,30 +482,15 @@ export default function Java() {
           >
             <div style={{ width: "100%", maxWidth: 900, aspectRatio: "16/9" }}>
               <YouTubeResource
-                title="Dr.Alaa"
-                embedUrl="https://www.youtube.com/embed/k623vHQOoKo?si=jPEfIL8sOHy47G5V"
-                style={{ width: "100%", height: "100%" }}
-              />
-            </div>
-
-            <div style={{ width: "100%", maxWidth: 900, aspectRatio: "16/9" }}>
-              <YouTubeResource
-                title="Dr.Ayat"
-                embedUrl="https://www.youtube.com/embed/L_W07rp4-2c?si=Tw7uaqFsEAtcaDzU"
+                title="Thaer Alomour"
+                embedUrl="https://www.youtube.com/embed/e3loMbulwNg?si=vzOT6iIrJDiS0NrH"
                 style={{ width: "100%", height: "100%" }}
               />
             </div>
             <div style={{ width: "100%", maxWidth: 900, aspectRatio: "16/9" }}>
               <YouTubeResource
-                title="Mohammad Aldesouki"
-                embedUrl="https://www.youtube.com/embed/KYhy6Q914C0?si=k0dGGENiv0t3IasS"
-                style={{ width: "100%", height: "100%" }}
-              />
-            </div>
-            <div style={{ width: "100%", maxWidth: 900, aspectRatio: "16/9" }}>
-              <YouTubeResource
-                title="Adel Nasim"
-                embedUrl="https://www.youtube.com/embed/mNvJipMTKSM?si=_IfB_79Ypq8MoxND"
+                title=" Mohammad Aldesouki"
+                embedUrl="https://www.youtube.com/embed/r_JmP_bZErQ?si=N1KvvJehs6I8fk3H"
                 style={{ width: "100%", height: "100%" }}
               />
             </div>
@@ -550,44 +556,6 @@ export default function Java() {
               </div>
 
               {/* Second group */}
-              <div style={{ textAlign: "center" }}>
-                <div
-                  style={{
-                    width: 200,
-                    height: 200,
-                    borderRadius: "50%",
-                    overflow: "hidden",
-                    margin: "0 auto",
-                  }}
-                >
-                  <img
-                    src={all2}
-                    alt="WhatsApp Group 2"
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                    }}
-                    loading="lazy"
-                  />
-                </div>
-                <a
-                  href="https://chat.whatsapp.com/AnotherGroupLink"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    display: "inline-block",
-                    marginTop: 10,
-                    padding: "10px 20px",
-                    background: "transparent",
-                    borderRadius: 8,
-                    textDecoration: "none",
-                    fontWeight: 600,
-                  }}
-                >
-                  Join Group
-                </a>
-              </div>
             </div>
           </h1>
 

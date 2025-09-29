@@ -5,6 +5,12 @@
   width: 100%;
   box-sizing: border-box;
   grid-template-columns: repeat(2, 1fr); /* default: 2 on phones */
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+h1{
+    margin-bottom: 1%;
+    margin-top: 1%;
 }
 
 @media (min-width: 768px) {

@@ -48,6 +48,7 @@ import Card from "./Majors/Card";
 import Header from "./Header";
 import Roadmaps from "./Majors/Road/Roadmaps";
 import BlurText from "./Animation/BlurText";
+import Labdb from "./Subjects/Labdb";
 import "./Test3.css";
 function App() {
   function DeveloperRedirect() {
@@ -107,6 +108,7 @@ function App() {
         <Route path="/intern" element={<Intern />} />
         <Route path="/roadmaps" element={<Roadmaps />} />
         <Route path="*" element={<Card />} />
+        <Route path="/labdb" element={<Labdb />} />
         <Route path="/developer" element={<DeveloperRedirect />} />
       </Routes>
       <VisitorCounter />
