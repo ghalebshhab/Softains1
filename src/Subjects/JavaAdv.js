@@ -445,7 +445,7 @@ export default function JavaAdv() {
           >
             <div style={{ width: "100%", maxWidth: 900, aspectRatio: "16/9" }}>
               <YouTubeResource
-                title="Dr.Maen"
+                title="Dr.Maen Hammad"
                 embedUrl="https://www.youtube.com/embed/iniitGetKQY?si=gWpDCuBuvnTCYshE"
                 style={{ width: "100%", height: "100%" }}
               />

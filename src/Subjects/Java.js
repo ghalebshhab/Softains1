@@ -469,7 +469,7 @@ export default function Java() {
 
             <div style={{ width: "100%", maxWidth: 900, aspectRatio: "16/9" }}>
               <YouTubeResource
-                title="Dr.Ayat"
+                title="Dr.Ayat Al-ahmad"
                 embedUrl="https://www.youtube.com/embed/L_W07rp4-2c?si=Tw7uaqFsEAtcaDzU"
                 style={{ width: "100%", height: "100%" }}
               />

@@ -270,7 +270,7 @@ export default function Vb() {
     {
       title: "Lecture 2.B",
       link: "https://drive.google.com/file/d/1y88zULyDs4axc4pjaqeM3MNTrhbZdhP-/view?usp=drive_link",
-      name: "Intro To Visual & C#",
+      name: "Intro To  C#",
     },
     {
       title: "Lecture 3",
@@ -285,7 +285,7 @@ export default function Vb() {
     {
       title: "Lecture 5",
       link: "https://drive.google.com/file/d/1JFnyYaTwKczk7ShckzrdpNBLYjKlVwD6/view?usp=drive_link",
-      name: "Loops & Files & Random",
+      name: "Loops & Files",
     },
     {
       title: "Lecture 6",
@@ -466,7 +466,7 @@ export default function Vb() {
           >
             <div style={{ width: "100%", maxWidth: 900, aspectRatio: "16/9" }}>
               <YouTubeResource
-                title="Dr.Alaa"
+                title="Dr.Alaa Baarah"
                 embedUrl="https://www.youtube.com/embed/p6UOrEiP2zw?si=fp2JLCrSd5fEngTO"
                 style={{ width: "100%", height: "100%" }}
               />

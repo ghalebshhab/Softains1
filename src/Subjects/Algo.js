@@ -546,7 +546,7 @@ export default function Algo() {
           >
             <div style={{ width: "100%", maxWidth: 900, aspectRatio: "16/9" }}>
               <YouTubeResource
-                title="Dr.Sahar"
+                title="Dr.Sahar Idwan"
                 embedUrl="https://www.youtube.com/embed/NQ5dTqPOvk0?si=F7o-H6e6UMH5RjBI"
                 style={{ width: "100%", height: "100%" }}
               />
@@ -554,7 +554,7 @@ export default function Algo() {
 
             <div style={{ width: "100%", maxWidth: 900, aspectRatio: "16/9" }}>
               <YouTubeResource
-                title="Dr.Ahmad"
+                title="Dr.Ahmad Qawasmeh"
                 embedUrl="https://www.youtube.com/embed/ip3Tmg0rjLQ?si=II5PRblq5ElixIfZ"
                 style={{ width: "100%", height: "100%" }}
               />

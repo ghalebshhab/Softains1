@@ -9,10 +9,382 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import Magnet from "../Animation/Magent";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import all from "./img/Softians IT Community/2) Softians IT - اجباري تخصص/22.png";
+import "./general.css";
+import L from "./img/web-development.png";
+import { useState } from "react";
+import YouTubeResource from "./Youtube";
+import SpotlightCard from "../Animation/SpotlightCard";
+import { Link } from "react-router-dom";
+
 export default function Web() {
+  // Helper: robustly extract Drive file ID from several link formats
+  const getDriveFileId = (url) => {
+    if (!url || typeof url !== "string") return null;
+    // match /d/FILEID/
+    const m1 = url.match(/\/d\/([a-zA-Z0-9_-]+)(?:\/|$)/);
+    if (m1 && m1[1]) return m1[1];
+    // match id=FILEID
+    const m2 = url.match(/[?&]id=([a-zA-Z0-9_-]+)/);
+    if (m2 && m2[1]) return m2[1];
+    // match uc?id=FILEID
+    const m3 = url.match(/uc\?id=([a-zA-Z0-9_-]+)/);
+    if (m3 && m3[1]) return m3[1];
+    return null;
+  };
+
+  // Build Drive URLs from fileId
+  const driveUrls = (rawLink) => {
+    const id = getDriveFileId(rawLink);
+    if (!id)
+      return {
+        previewUrl: rawLink,
+        openUrl: rawLink,
+        downloadUrl: rawLink,
+        thumb: "",
+      };
+    const previewUrl = `https://drive.google.com/file/d/${id}/preview`;
+    const openUrl = `https://drive.google.com/open?id=${id}`;
+    const downloadUrl = `https://drive.google.com/uc?export=download&id=${id}`;
+    const thumb = `https://drive.google.com/thumbnail?id=${id}&sz=w400-h500`;
+    return { previewUrl, openUrl, downloadUrl, thumb };
+  };
+
+  // Local lightweight preview card (lazy loads iframe only when preview is opened)
+  const PreviewCard = ({ title, link, name }) => {
+    const [showPreview, setShowPreview] = useState(false);
+    const { previewUrl, openUrl, downloadUrl, thumb } = driveUrls(link);
+
+    const styles = {
+      card: {
+        background: "rgba(0,0,0,0.65)",
+        border: "1px solid rgba(255,255,255,0.08)",
+        borderRadius: 12,
+        padding: 12,
+        color: "#fff",
+        textAlign: "center",
+        maxWidth: 360,
+        margin: "0 auto",
+        boxShadow: "0 8px 20px rgba(0,0,0,0.5)",
+        display: "flex",
+        flexDirection: "column",
+        gap: 10,
+      },
+      thumbWrap: {
+        width: "100%",
+        height: 0,
+        paddingBottom: "130%", // book-like aspect
+        position: "relative",
+        borderRadius: 8,
+        overflow: "hidden",
+        background: "linear-gradient(180deg,#222,#111)",
+        border: "1px solid rgba(255,255,255,0.04)",
+      },
+      thumbImg: {
+        position: "absolute",
+        inset: 0,
+        width: "100%",
+        height: "100%",
+        objectFit: "cover",
+      },
+      title: {
+        fontSize: "1rem",
+        fontWeight: 700,
+        margin: 0,
+        padding: "6px 4px",
+      },
+      meta: {
+        fontSize: "0.9rem",
+        color: "rgba(255,255,255,0.75)",
+        marginBottom: 6,
+      },
+      actions: {
+        display: "flex",
+        gap: 8,
+        justifyContent: "center",
+        flexWrap: "wrap",
+      },
+      btn: {
+        padding: "8px 12px",
+        borderRadius: 8,
+        background: "black",
+        color: "#fff",
+        textDecoration: "none",
+        border: "1px solid rgba(255,255,255,0.08)",
+        fontWeight: 600,
+        cursor: "pointer",
+      },
+      btnPrimary: {
+        background: "black",
+        border: "1px solid rgba(255,255,255,0.16)",
+      },
+      modalBackdrop: {
+        position: "fixed",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        background: "rgba(0,0,0,0.75)",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        zIndex: 9999,
+        padding: 20,
+      },
+      modalContent: {
+        width: "100%",
+        maxWidth: 900,
+        height: "80vh",
+        background: "#000",
+        borderRadius: 10,
+        overflow: "hidden",
+        position: "relative",
+        border: "1px solid rgba(255,255,255,0.06)",
+      },
+      closeBtn: {
+        position: "absolute",
+        top: 20,
+        left: 8,
+        background: "rgba(0,0,0,0.8)",
+        color: "#fff",
+        border: "none",
+        padding: "6px 10px",
+        borderRadius: 6,
+        cursor: "pointer",
+        zIndex: 2,
+      },
+      iframe: {
+        width: "100%",
+        height: "100%",
+        border: "none",
+      },
+    };
+
+    return (
+      <>
+        <div style={styles.card}>
+          <div style={styles.thumbWrap}>
+            {thumb ? (
+              <img
+                src={thumb}
+                alt={title}
+                style={styles.thumbImg}
+                loading="lazy"
+                onError={(e) => {
+                  // fallback: display nothing if thumbnail not available
+                  e.currentTarget.style.display = "none";
+                }}
+              />
+            ) : (
+              <div
+                style={{
+                  ...styles.thumbImg,
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  color: "rgba(255,255,255,0.5)",
+                }}
+              >
+                No preview
+              </div>
+            )}
+          </div>
+
+          <h4 style={styles.title}>{name || title}</h4>
+          <div style={styles.meta}>{title}</div>
+
+          <div style={styles.actions}>
+            <button
+              style={{ ...styles.btn, ...styles.btnPrimary }}
+              onClick={() => setShowPreview(true)}
+              aria-label={`Preview ${title}`}
+            >
+              Preview
+            </button>
+
+            <a
+              href={openUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ ...styles.btn, ...styles.btnPrimary }}
+            >
+              Open
+            </a>
+
+            <a
+              href={downloadUrl}
+              download
+              style={{ ...styles.btn, ...styles.btnPrimary }}
+            >
+              Download
+            </a>
+          </div>
+        </div>
+
+        {showPreview && (
+          <div
+            style={styles.modalBackdrop}
+            onClick={() => setShowPreview(false)}
+            role="dialog"
+            aria-modal="true"
+          >
+            <div
+              style={styles.modalContent}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setShowPreview(false)}
+                style={styles.closeBtn}
+                aria-label="Close preview"
+              >
+                Close
+              </button>
+              {/* Lazy-load iframe only when modal open */}
+              <iframe
+                src={previewUrl}
+                title={`Preview - ${title}`}
+                style={styles.iframe}
+                allowFullScreen
+              />
+            </div>
+          </div>
+        )}
+      </>
+    );
+  };
+
+  // Data arrays (unchanged) — we'll pass raw links into PreviewCard (it handles extraction)
+  const lectures = [
+    {
+      title: "Lecture 1",
+      link: "https://drive.google.com/file/d/1qdzDwcQ5cjkMD6cQlXiSNnIOlkJguagp/view?usp=drive_link",
+      name: "Intro",
+    },
+    {
+      title: "Lecture 2",
+      link: "https://drive.google.com/file/d/1c81O4t1aM1kGGYNUK5xWVpQsE-uJ1daV/view?usp=drive_link",
+      name: "HTML",
+    },
+    {
+      title: "Lecture 3",
+      link: "https://drive.google.com/file/d/1_seJYtiUneqvFQocybRmI66OEo-sBrt_/view?usp=drive_link",
+      name: "CSS",
+    },
+    {
+      title: "Lecture 4",
+      link: "https://drive.google.com/file/d/1t7CdY-e_qvhSQNPHxXoymPXCGm6YzjRS/view?usp=drive_link",
+      name: "URL's",
+    },
+    {
+      title: "Lecture 5",
+      link: "https://drive.google.com/file/d/1qjWrQ-2QxqgqagQ2FRPylBz6JvZbasL1/view?usp=drive_link",
+      name: "JS Basics",
+    },
+    {
+      title: "Lecture 6",
+      link: "https://drive.google.com/file/d/1l_u4ot60JliEhDJ0DrKFsT6-9AswFC_4/view?usp=drive_link",
+      name: "JS Prog",
+    },
+    {
+      title: "Lecture 7",
+      link: "https://drive.google.com/file/d/1ZgFABSpk8qqz6qsdrDn0qz-DiklPd63E/view?usp=drive_link",
+      name: "JS Features",
+    },
+    {
+      title: "Lecture 8",
+      link: "https://drive.google.com/file/d/1VU-vN349EH5UzALg6-XMqvTPl049g7wX/view?usp=drive_link",
+      name: "DOM",
+    },
+    {
+      title: "Lecture 9",
+      link: "https://drive.google.com/file/d/1DaGyVYhtboE0Yp6VY9T06x4bbaquYVQx/view?usp=drive_link",
+      name: "Events",
+    },
+    {
+      title: "Lecture 10",
+      link: "https://drive.google.com/file/d/1jQQMKFS3JR9CDp7JHRgRu6mD8gKtzltv/view?usp=drive_link",
+      name: "Front End",
+    },
+    {
+      title: "Lecture 11",
+      link: "https://drive.google.com/file/d/1afVF_5YBB__yHArJBUZ72Tx--jj17deD/view?usp=drive_link",
+      name: "React JS",
+    },
+    {
+      title: "Lecture 12",
+      link: "https://drive.google.com/file/d/1ynPLrsk4hLHrqEptgnTXCVB9L1Je5IKM/view?usp=drive_link",
+      name: "SPA",
+    },
+    {
+      title: "Lecture 13",
+      link: "https://drive.google.com/file/d/18Ujk6l8np-xCO8vbtbG9NMQAre9zP7Dn/view?usp=drive_link",
+      name: "RWD",
+    },
+    {
+      title: "Lecture 14",
+      link: "https://drive.google.com/file/d/1jgBNkFiw-Eh4A-Xl8B5C3BQ9cIqrzT93/view?usp=drive_link",
+      name: "Web Apps",
+    },
+    {
+      title: "Lecture 15",
+      link: "https://drive.google.com/file/d/1KPxfLyGbxfT75b99mjH1gcdMKrNM_3Pq/view?usp=drive_link",
+      name: "HTTP",
+    },
+    {
+      title: "Lecture 16",
+      link: "https://drive.google.com/file/d/1ebIZafPmP0NHCuw6TkUgzrdw6XGkJxfc/view?usp=drive_link",
+      name: "Server Com",
+    },
+    {
+      title: "Lecture 17",
+      link: "https://drive.google.com/file/d/1IsALxh10L1Q2kXyH0wYCLP_INB5-bADd/view?usp=drive_link",
+      name: "Web Servers",
+    },
+    {
+      title: "Lecture 18",
+      link: "https://drive.google.com/file/d/15smTKdDb-XKDgqv0S-WXhthHYFwadSKD/view?usp=drive_link",
+      name: "Node JS",
+    },
+    {
+      title: "Lecture 19",
+      link: "https://drive.google.com/file/d/16WKukQNAiHrNbuRlG1eOnGgbHKIDqgyF/view?usp=drive_link",
+      name: "Express",
+    },
+    {
+      title: "Lecture 20",
+      link: "https://drive.google.com/file/d/1EPw5X4IVqCar28J0jUrYCVQX5iXD6E3p/view?usp=drive_link",
+      name: "Data Base",
+    },
+  ];
+
+  const lectures1 = [];
+
+  // top-level styles
+  const pageStyles = {
+    container: { overflowX: "hidden" },
+    main: { maxWidth: "100%", overflowX: "hidden", paddingBottom: 40 },
+    heroImageWrap: { textAlign: "center", margin: "20px 0" },
+    heroImg: {
+      maxWidth: "90%",
+      height: "auto",
+      borderRadius: 12,
+      display: "inline-block",
+      objectFit: "cover",
+      loading: "lazy",
+    },
+    grid: {
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+      gap: 20,
+      padding: "0 10px",
+      width: "100%",
+      boxSizing: "border-box",
+    },
+  };
+
   return (
     <>
-      <div id="container">
+      <div id="container" style={pageStyles.container}>
         <div className="light-rays">
           <LightRays
             raysOrigin="top-center"
@@ -28,8 +400,11 @@ export default function Web() {
           />
         </div>
 
-        <main id="content">
-          <h1 className="welcome-text">
+        <main id="content" style={pageStyles.main}>
+          <h1
+            className="welcome-text"
+            style={{ textAlign: "center", padding: "0 10px" }}
+          >
             <ShinyText
               text="Welcome To Softians Website"
               disabled={false}
@@ -37,16 +412,29 @@ export default function Web() {
               className="custom-className"
             />
           </h1>
+
+          {/* Use <img> for hero (lighter and better on mobile) */}
+          <div style={pageStyles.heroImageWrap}>
+            <img
+              src={L}
+              alt="Algorithm hero"
+              style={pageStyles.heroImg}
+              loading="lazy"
+            />
+          </div>
+
           <div
             style={{
-              textAlign: "center",
               display: "flex",
               justifyContent: "center",
+              alignItems: "center",
+              width: "100%",
+              textAlign: "center",
+              flexDirection: "column",
+              marginBottom: "2%",
             }}
           >
-            {" "}
             <h1>
-              {" "}
               <ClickSpark
                 sparkColor="#fff"
                 sparkSize={20}
@@ -55,151 +443,250 @@ export default function Web() {
                 duration={400}
               >
                 <BlurText
-                  text="Web "
+                  text="Web"
                   delay={150}
                   animateBy="letters"
                   direction="top"
-                  className="text-2xl mb-8"
-                />{" "}
-              </ClickSpark>{" "}
+                  style={{ color: "#fff", fontSize: "3rem", fontWeight: "700" }}
+                />
+              </ClickSpark>
             </h1>
           </div>
+
           <div
-            className="disc"
             style={{
-              border: "1px solid #bdbdbd",
-              borderRadius: "10px",
+              width: "100%",
+              display: "flex",
+              flexDirection: "column",
+              alignContent: "center",
+              alignItems: "center",
+              justifyContent: "center",
+              padding: "0 10px",
+              marginBottom: 16,
+            }}
+          ></div>
+
+          <h1 style={{ textAlign: "center", width: "100%", padding: "0 10px" }}>
+            Chapters
+          </h1>
+          <div className="cards-grid">
+            {lectures.map((l) => (
+              <div key={l.title}>
+                <PreviewCard title={l.title} link={l.link} name={l.name} />
+              </div>
+            ))}
+          </div>
+
+          <h1
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "0.5rem", // space between icon and text
+              width: "100%",
+              textAlign: "center",
+              padding: "20px 10px 0 10px",
+              fontSize: "clamp(1.2rem, 4vw, 2rem)",
+              fontWeight: 700,
             }}
           >
-            <h1
-              style={{
-                direction: "rtl",
+            <YouTubeIcon style={{ fontSize: "1.5em", flexShrink: 0 }} />
+            YouTube Explanation
+          </h1>
 
-                textAlign: "center",
-              }}
-            >
-              وصف المادة
-            </h1>
-            <h1
-              style={{
-                direction: "rtl",
+          <div
+            style={{
+              padding: "0 10px",
+              display: "flex",
+              flexDirection: "column",
+              gap: 20,
+              alignItems: "center", // center videos
+            }}
+          >
+            <div style={{ width: "100%", maxWidth: 900, aspectRatio: "16/9" }}>
+              <YouTubeResource
+                title="HTML"
+                embedUrl="https://www.youtube.com/embed/6QAELgirvjs?si=a25sjdWzHUfofYJr"
+                style={{ width: "100%", height: "100%" }}
+              />
+            </div>
 
-                textAlign: "center",
-              }}
-            >
-              الأفاريج
-            </h1>
-            <h1
-              style={{
-                direction: "rtl",
-
-                textAlign: "center",
-              }}
-            >
-              المصادر
-            </h1>
-            <h1
-              style={{
-                direction: "rtl",
-
-                textAlign: "center",
-              }}
-            >
-              قروب المادة
-            </h1>
-            <h1
-              style={{
-                direction: "rtl",
-
-                textAlign: "center",
-              }}
-            >
-              شرح اليوتيوب
-            </h1>
+            <div style={{ width: "100%", maxWidth: 900, aspectRatio: "16/9" }}>
+              <YouTubeResource
+                title="CSS"
+                embedUrl="https://www.youtube.com/embed/X1ulCwyhCVM?si=OXA4xoC1Dr8XL1R0"
+                style={{ width: "100%", height: "100%" }}
+              />
+            </div>
+            <div style={{ width: "100%", maxWidth: 900, aspectRatio: "16/9" }}>
+              <YouTubeResource
+                title="JS"
+                embedUrl="https://www.youtube.com/embed/TbHeHAyAV7Q?si=nzfod4p1aeR2EZlr"
+                style={{ width: "100%", height: "100%" }}
+              />
+            </div>
+            <div style={{ width: "100%", maxWidth: 900, aspectRatio: "16/9" }}>
+              <YouTubeResource
+                title="React Js"
+                embedUrl="https://www.youtube.com/embed/ihRRf3EjTV8?si=tH_ckHN0vP9_jVn8"
+                style={{ width: "100%", height: "100%" }}
+              />
+            </div>
+            <div style={{ width: "100%", maxWidth: 900, aspectRatio: "16/9" }}>
+              <YouTubeResource
+                title="Node + Express"
+                embedUrl="https://www.youtube.com/embed/LG7ff9TVWjM?si=RRWXviYOLvB2-rJ5"
+                style={{ width: "100%", height: "100%" }}
+              />
+            </div>
+            <h3 style={{ marginTop: "3%" }}>
+              <Link to="/roadmaps">
+                <SpotlightCard
+                  className="custom-spotlight-card"
+                  spotlightColor="rgba(0, 229, 255, 0.2)"
+                >
+                  Study It In Our Road Maps
+                </SpotlightCard>
+              </Link>
+            </h3>
           </div>
 
-          <hr style={{ marginBottom: "3%" }} />
+          <h1
+            style={{
+              textAlign: "center",
+              width: "100%",
+              padding: "20px 10px 0 10px",
+              marginTop: "3%",
+            }}
+          >
+            <WhatsAppIcon /> WhatsApp Group <br />
+            <div
+              style={{
+                width: 200,
+                height: 200,
+                margin: "20px auto",
+                borderRadius: "50%",
+                overflow: "hidden",
+              }}
+            >
+              <img
+                src={all}
+                alt="WhatsApp Group"
+                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                loading="lazy"
+              />
+            </div>
+            <a
+              href="https://chat.whatsapp.com/KRAggNFixN7KCEJbPOQOtw?mode=ems_copy_t"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-block",
+                marginTop: 10,
+                padding: "10px 20px",
+                background: "transparent",
+                borderRadius: 8,
+                textDecoration: "none",
+                fontWeight: 600,
+                marginBottom: "4%",
+              }}
+            >
+              Join Group
+            </a>
+          </h1>
 
-          <div className="contact">
+          <div className="contact" style={{ padding: "0 10px" }}>
             <h3 style={{ textAlign: "center" }}>Contact US :</h3>
             <div
               className="social-links"
               style={{
+                display: "flex",
+                flexWrap: "wrap",
                 alignItems: "center",
                 textAlign: "center",
                 justifyContent: "center",
-                marginTop: "10px",
+                marginTop: 10,
+                gap: 10,
               }}
             >
-              <button className="social-btn">
-                <span className="material-icons">
-                  <a
-                    href="https://www.facebook.com/share/g/17GrEYsQpL/"
-                    target="blank"
-                    title="Our Facebook"
-                  >
-                    {" "}
-                    <Magnet padding={50} disabled={false} magnetStrength={5}>
-                      <FacebookRoundedIcon />
-                    </Magnet>
-                  </a>
-                </span>
+              <button
+                className="social-btn"
+                style={{ background: "none", border: "none" }}
+              >
+                <a
+                  href="https://www.facebook.com/share/g/17GrEYsQpL/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Our Facebook"
+                >
+                  <Magnet padding={50} disabled={false} magnetStrength={5}>
+                    <FacebookRoundedIcon />
+                  </Magnet>
+                </a>
               </button>
-              <button className="social-btn">
-                <span className="material-icons">
-                  <a
-                    href="https://www.youtube.com/@SOFTIANS_Channel"
-                    target="blank"
-                    title="Our YouTube"
-                  >
-                    {" "}
-                    <Magnet padding={50} disabled={false} magnetStrength={5}>
-                      <YouTubeIcon />
-                    </Magnet>
-                  </a>
-                </span>
+
+              <button
+                className="social-btn"
+                style={{ background: "none", border: "none" }}
+              >
+                <a
+                  href="https://www.youtube.com/@SOFTIANS_Channel"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Our YouTube"
+                >
+                  <Magnet padding={50} disabled={false} magnetStrength={5}>
+                    <YouTubeIcon />
+                  </Magnet>
+                </a>
               </button>
-              <button className="social-btn">
-                <span className="material-icons">
-                  <a
-                    href="https://www.linkedin.com/company/softinas-hu/"
-                    target="blank"
-                    title="Our LinkedIn"
-                  >
-                    {" "}
-                    <Magnet padding={50} disabled={false} magnetStrength={5}>
-                      <LinkedInIcon />
-                    </Magnet>
-                  </a>
-                </span>
+
+              <button
+                className="social-btn"
+                style={{ background: "none", border: "none" }}
+              >
+                <a
+                  href="https://www.linkedin.com/company/softinas-hu/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Our LinkedIn"
+                >
+                  <Magnet padding={50} disabled={false} magnetStrength={5}>
+                    <LinkedInIcon />
+                  </Magnet>
+                </a>
               </button>
-              <button className="social-btn">
-                <span className="material-icons">
-                  <a
-                    href="https://www.instagram.com/softians.hu/"
-                    target="blank"
-                    title="Our Instagram"
-                  >
-                    {" "}
-                    <Magnet padding={50} disabled={false} magnetStrength={5}>
-                      <InstagramIcon />
-                    </Magnet>
-                  </a>
-                </span>
+
+              <button
+                className="social-btn"
+                style={{ background: "none", border: "none" }}
+              >
+                <a
+                  href="https://www.instagram.com/softians.hu/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Our Instagram"
+                >
+                  <Magnet padding={50} disabled={false} magnetStrength={5}>
+                    <InstagramIcon />
+                  </Magnet>
+                </a>
               </button>
-              <button className="social-btn">
-                <span className="material-icons">
-                  <a
-                    href="https://whatsapp.com/channel/0029Vb6kQp46xCSNzwrb2I1A"
-                    target="blank"
-                    title="Our Whatsapp"
-                  >
-                    {" "}
-                    <Magnet padding={50} disabled={false} magnetStrength={5}>
-                      <WhatsAppIcon />
-                    </Magnet>
-                  </a>
-                </span>
+
+              <button
+                className="social-btn"
+                style={{ background: "none", border: "none" }}
+              >
+                <a
+                  href="https://whatsapp.com/channel/0029Vb6kQp46xCSNzwrb2I1A"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Our Whatsapp"
+                >
+                  <Magnet padding={50} disabled={false} magnetStrength={5}>
+                    <WhatsAppIcon />
+                  </Magnet>
+                </a>
               </button>
             </div>
           </div>

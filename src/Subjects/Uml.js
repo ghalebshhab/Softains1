@@ -458,7 +458,7 @@ export default function Uml() {
                 duration={400}
               >
                 <BlurText
-                  text="Unified Modelling Language"
+                  text="UML"
                   delay={150}
                   animateBy="letters"
                   direction="top"
