@@ -10,7 +10,7 @@ import Magnet from "../Animation/Magent";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import all from "./img/Softians IT Community/2) Softians IT - اجباري تخصص/14.png";
-import L from "./img/java (1).png";
+import L from "./img/Logos/java (1).png";
 import { useState } from "react";
 import YouTubeResource from "./Youtube";
 export default function JavaAdv() {

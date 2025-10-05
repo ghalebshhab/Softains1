@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Test from "./Test";
 import Test3 from "./Test3";
 import Software from "./Majors/Software";
@@ -70,45 +70,51 @@ function App() {
         <Route path="/" element={<Test3 />} />
         <Route path="/Software" element={<Software />} />
 
+        {/* Software-Related Subjects */}
+        <Route path="/Software/Cplus" element={<Cplus />} />
+        <Route path="/Software/Java" element={<Java />} />
+        <Route path="/Software/dataStructures" element={<Datastruct />} />
+        <Route path="/Software/visualProgramming" element={<Vb />} />
+        <Route path="/Software/softwared" element={<Softwared />} />
+        <Route path="/Software/spm" element={<Spm />} />
+        <Route path="/Software/uml" element={<Uml />} />
+        <Route path="/Software/web" element={<Web />} />
+        <Route path="/Software/testing" element={<Testing />} />
+        <Route path="/Software/documentation" element={<Doc />} />
+        <Route path="/Software/design" element={<Design />} />
+        <Route path="/Software/requirements" element={<Req />} />
+        <Route path="/Software/quality" element={<Quality />} />
+        <Route path="/Software/maintanance" element={<Mainte />} />
+        <Route path="/Software/javaAdvance" element={<JavaAdv />} />
+        <Route path="/Software/database" element={<Db />} />
+        <Route path="/Software/labdb" element={<Labdb />} />
+        <Route path="/Software/algorithms" element={<Algo />} />
+        <Route path="/Software/security" element={<Security />} />
+        <Route path="/Software/analysis" element={<Analy />} />
+        <Route path="/Software/cloud" element={<Cloud />} />
+        <Route path="/Software/gui" element={<Gui />} />
+        <Route path="/Software/network" element={<Net />} />
+        <Route path="/Software/os" element={<Os />} />
+        <Route path="/Software/org" element={<Org />} />
+        <Route path="/Software/discrete" element={<Desc />} />
+        <Route path="/Software/grad1" element={<Grad1 />} />
+        <Route path="/Software/grad2" element={<Grad2 />} />
+        <Route path="/Software/spi" element={<Spi />} />
+        <Route path="/Software/intern" element={<Intern />} />
+
+        {/* Non-software / Other Pages */}
         <Route path="/Mobileapp" element={<Mobile2 />} />
         <Route path="/About" element={<About />} />
-        <Route path="/Cplus" element={<Cplus />} />
-        <Route path="/Java" element={<Java />} />
-        <Route path="/android" element={<Android />} />
-        <Route path="/dataStructures" element={<Datastruct />} />
-        <Route path="/visualProgramming" element={<Vb />} />
-        <Route path="/softwared" element={<Softwared />} />
-        <Route path="/spm" element={<Spm />} />
-        <Route path="/uml" element={<Uml />} />
-        <Route path="/web" element={<Web />} />
-        <Route path="/testing" element={<Testing />} />
-        <Route path="/documentation" element={<Doc />} />
-        <Route path="/design" element={<Design />} />
-        <Route path="/requirements" element={<Req />} />
-        <Route path="/quality" element={<Quality />} />
-        <Route path="/maintanance" element={<Mainte />} />
-        <Route path="/javaadvance" element={<JavaAdv />} />
-        <Route path="/database" element={<Db />} />
-        <Route path="/algorithms" element={<Algo />} />
-        <Route path="/security" element={<Security />} />
-        <Route path="/analysis" element={<Analy />} />
-        <Route path="/cloud" element={<Cloud />} />
-        <Route path="/gui" element={<Gui />} />
-        <Route path="/network" element={<Net />} />
-        <Route path="/os" element={<Os />} />
-        <Route path="/org" element={<Org />} />
+        <Route path="/logic" element={<Log />} />
         <Route path="/calc" element={<Calc />} />
         <Route path="/statistics" element={<Statis />} />
         <Route path="/linear" element={<Lin />} />
         <Route path="/numerical" element={<Num />} />
-        <Route path="/discrete" element={<Desc />} />
-        <Route path="/grad1" element={<Grad1 />} />
-        <Route path="/grad2" element={<Grad2 />} />
-        <Route path="/spi" element={<Spi />} />
-        <Route path="/intern" element={<Intern />} />
         <Route path="/roadmaps" element={<Roadmaps />} />
+
+        {/* Fallback Route */}
         <Route path="*" element={<Card />} />
-        <Route path="/labdb" element={<Labdb />} />
+
         <Route path="/developer" element={<DeveloperRedirect />} />
       </Routes>
       <VisitorCounter />
@@ -123,7 +129,9 @@ function App() {
         </h2>
       </div>
       <div style={{ width: "100%", margin: "1% 0 3% 0" }}>
-        <h2 style={{ textAlign: "center" }}>Developed By : Ghaleb Shhab</h2>
+        <h2 style={{ textAlign: "center" }}>
+          Developed By :<Link to="/developer"> Ghaleb Shhab</Link>
+        </h2>
       </div>
     </>
   );

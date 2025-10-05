@@ -12,7 +12,7 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import YouTubeResource from "./Youtube";
 import { useState } from "react";
 import all from "./img/Softians IT Community/2) Softians IT - اجباري تخصص/17.png";
-import L from "./img/database-file.png";
+import L from "./img/Logos/database-file.png";
 export default function Db() {
   // Helper: robustly extract Drive file ID from several link formats
   const getDriveFileId = (url) => {

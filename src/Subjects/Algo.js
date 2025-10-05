@@ -10,7 +10,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import Magnet from "../Animation/Magent";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import L from "./img/Algo.png";
+import L from "./img/Logos/Algo.png";
 import YouTubeResource from "./Youtube";
 import all from "./img/Softians IT Community/2) Softians IT - اجباري تخصص/20.png";
 import "./general.css";

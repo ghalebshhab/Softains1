@@ -11,7 +11,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import Magnet from "../Animation/Magent";
 import BlurText from "../Animation/BlurText";
 import StickerPeel from "../Animation/StickerPeel";
-import { Link, Route, Routes } from "react-router-dom";
+import { Link, Outlet, Route, Routes } from "react-router-dom";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import Sapp from "../Sapp";
 import Logo from "../Dark.png";
@@ -24,58 +24,59 @@ import Button from "../Animation/Butto";
 export default function Software() {
   const subjects = [
     // إجباري كلية
-    { name: "C++ & Lab", path: "Cplus" },
+    { name: "C++ & Lab", path: "/Software/Cplus" },
     {
       name: "Java 1 & Lab",
-      path: "Java",
+      path: "/Software/Java",
       youtube: "https://youtu.be/L_W07rp4-2c?si=E_VkUDoRS--TNCRU",
     },
-    { name: "Data Structures", path: "dataStructures" },
-    { name: "Visual Programming", path: "visualProgramming" },
-    { name: "Software", path: "softwared" },
-    { name: "SPM", path: "spm" },
-    { name: "UML", path: "uml" },
-    { name: "Web", path: "web" },
-    { name: "Documentation", path: "documentation" },
-    { name: "Design", path: "design" },
-    { name: "Testing", path: "testing" },
-    { name: "Requirements", path: "requirements" },
-    { name: "Measurement", path: "measurement" },
-    { name: "Quality", path: "quality" },
-    { name: "Maintanance", path: "maintanance" },
+    { name: "Data Structures", path: "/Software/dataStructures" },
+    { name: "Visual Programming", path: "/Software/visualProgramming" },
+    { name: "Software", path: "/Software/softwared" },
+    { name: "SPM", path: "/Software/spm" },
+    { name: "UML", path: "/Software/uml" },
+    { name: "Web", path: "/Software/web" },
+    { name: "Documentation", path: "/Software/documentation" },
+    { name: "Design", path: "/Software/design" },
+    { name: "Testing", path: "/Software/testing" },
+    { name: "Requirements", path: "/Software/requirements" },
+    { name: "Measurement", path: "/Software/measurement" },
+    { name: "Quality", path: "/Software/quality" },
+    { name: "Maintanance", path: "/Software/maintanance" },
 
     // إجباري تخصص
-    { name: "Java Advance", path: "javaAdvance" },
-    { name: "Database", path: "database" },
-    { name: "Lab Database", path: "labdb" },
-    { name: "Algorithms", path: "algorithms" },
-    { name: "Security", path: "security" },
-    { name: "AI", path: "ai" },
-    { name: "Analysis", path: "analysis" },
-    { name: "Cloud Computing", path: "cloud" },
-    { name: "Android", path: "android" },
-    { name: "GUI", path: "gui" },
+    { name: "Java Advance", path: "/Software/javaAdvance" },
+    { name: "Database", path: "/Software/database" },
+    { name: "Lab Database", path: "/Software/labdb" },
+    { name: "Algorithms", path: "/Software/algorithms" },
+    { name: "Security", path: "/Software/security" },
+    { name: "AI", path: "/Software/ai" },
+    { name: "Analysis", path: "/Software/analysis" },
+    { name: "Cloud Computing", path: "/Software/cloud" },
+    { name: "Android", path: "/Software/android" },
+    { name: "GUI", path: "/Software/gui" },
 
     // اختياري تخصص
-    { name: "Network", path: "network" },
-    { name: "Operating System", path: "os" },
-    { name: "IoT Security", path: "iotSecurity" },
-    { name: "ORG ", path: "org" },
+    { name: "Network", path: "/Software/network" },
+    { name: "Operating System", path: "/Software/os" },
+    { name: "IoT Security", path: "/Software/iotSecurity" },
+    { name: "ORG", path: "/Software/org" },
 
     // مواد من كليات اخرى
-    { name: "Calculus 1", path: "calc" },
-    { name: "Statistics", path: "statistics" },
-    { name: "Linear 1", path: "linear" },
-    { name: "Numerical", path: "numerical" },
-    { name: "Discrete", path: "discrete" },
-    { name: "Logic", path: "logic" },
+    { name: "Calculus 1", path: "/Software/calc" },
+    { name: "Statistics", path: "/Software/statistics" },
+    { name: "Linear 1", path: "/Software/linear" },
+    { name: "Numerical", path: "/Software/numerical" },
+    { name: "Discrete", path: "/Software/discrete" },
+    { name: "Logic", path: "/Software/logic" },
 
     // بعد 80 ساعة
-    { name: "Graduation project 1", path: "grad1" },
-    { name: "Graduation project 2", path: "grad2" },
-    { name: "Special topics", path: "spi" },
-    { name: "Internship", path: "intern" },
+    { name: "Graduation project 1", path: "/Software/grad1" },
+    { name: "Graduation project 2", path: "/Software/grad2" },
+    { name: "Special topics", path: "/Software/spi" },
+    { name: "Internship", path: "/Software/intern" },
   ];
+
   const pages = [
     { name: "C++ & Lab" },
     { name: "Java 1 & Lab" },
@@ -129,7 +130,7 @@ export default function Software() {
     return (
       <>
         <div style={{ margin: "3%" }}>
-          <Link to={"/" + sub.path}>
+          <Link to={sub.path}>
             {" "}
             <SpotlightCard
               style={{ width: "40%" }}
@@ -145,6 +146,7 @@ export default function Software() {
       </>
     );
   });
+  <Outlet />;
 
   return (
     <>

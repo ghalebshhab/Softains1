@@ -12,7 +12,7 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import YouTubeResource from "./Youtube";
 import all from "./img/Softians IT Community/2) Softians IT - اجباري تخصص/25.png";
 import "./general.css";
-import L from "./img/management.png";
+import L from "./img/Logos/management.png";
 import { useState } from "react";
 
 export default function Spm() {
@@ -512,6 +512,49 @@ export default function Spm() {
               </div>
             ))}
           </div>
+          <h1
+            style={{
+              textAlign: "center",
+              width: "100%",
+              padding: "20px 10px 0 10px",
+            }}
+          >
+            Projects
+          </h1>
+
+          <div
+            style={{
+              width: "100%",
+              display: "flex",
+              flexDirection: "column",
+              alignContent: "center",
+              alignItems: "center",
+              justifyContent: "center",
+              padding: "0 10px",
+              marginBottom: 16,
+            }}
+          >
+            <PreviewCard
+              name="Project"
+              title="Description"
+              link="https://drive.google.com/file/d/1E_22eQMbKTn0j6do8YjnRELHm-tazCTX/view?usp=drive_link"
+            />
+            <h1
+              style={{
+                textAlign: "center",
+                width: "100%",
+                padding: "20px 10px 0 10px",
+              }}
+            >
+              Soluotion
+            </h1>
+            <PreviewCard
+              name="Project"
+              title="Soluotion"
+              link="https://drive.google.com/file/d/1YqRXHd96NXOtQOwgMyPQ_up9NEMxqzeM/view?usp=drive_link"
+            />
+          </div>
+
           <h1
             style={{
               display: "inline-flex",

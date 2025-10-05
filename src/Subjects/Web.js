@@ -11,7 +11,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import all from "./img/Softians IT Community/2) Softians IT - اجباري تخصص/22.png";
 import "./general.css";
-import L from "./img/web-development.png";
+import L from "./img/Logos/web-development.png";
 import { useState } from "react";
 import YouTubeResource from "./Youtube";
 import SpotlightCard from "../Animation/SpotlightCard";
