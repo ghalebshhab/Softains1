@@ -525,7 +525,7 @@ export default function Datastruct() {
               />
             </div>
             <a
-              href="https://chat.whatsapp.com/HtHfmpO9RxzI8XksZO0edT?mode=ems_copy_t"
+              href="https://chat.whatsapp.com/L26g3810oJr5xqok0PzICz?mode=ems_copy_t"
               target="_blank"
               rel="noopener noreferrer"
               style={{

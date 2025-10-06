@@ -42,7 +42,7 @@ export default function Software() {
     { name: "Requirements", path: "/Software/requirements" },
     { name: "Measurement", path: "/Software/measurement" },
     { name: "Quality", path: "/Software/quality" },
-    { name: "Maintanance", path: "/Software/maintanance" },
+    { name: "Maintainance", path: "/Software/maintanance" },
 
     // إجباري تخصص
     { name: "Java Advance", path: "/Software/javaAdvance" },

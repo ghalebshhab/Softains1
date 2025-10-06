@@ -97,19 +97,18 @@ function App() {
         <Route path="/Software/os" element={<Os />} />
         <Route path="/Software/org" element={<Org />} />
         <Route path="/Software/discrete" element={<Desc />} />
-        <Route path="/Software/grad1" element={<Grad1 />} />
-        <Route path="/Software/grad2" element={<Grad2 />} />
+
         <Route path="/Software/spi" element={<Spi />} />
-        <Route path="/Software/intern" element={<Intern />} />
+        <Route path="/Software/android" element={<Android />} />
 
         {/* Non-software / Other Pages */}
         <Route path="/Mobileapp" element={<Mobile2 />} />
         <Route path="/About" element={<About />} />
-        <Route path="/logic" element={<Log />} />
-        <Route path="/calc" element={<Calc />} />
-        <Route path="/statistics" element={<Statis />} />
-        <Route path="/linear" element={<Lin />} />
-        <Route path="/numerical" element={<Num />} />
+        <Route path="/Software/logic" element={<Log />} />
+        <Route path="/Software/calc" element={<Calc />} />
+        <Route path="/Software/statistics" element={<Statis />} />
+        <Route path="/Software/linear" element={<Lin />} />
+        <Route path="/Software/numerical" element={<Num />} />
         <Route path="/roadmaps" element={<Roadmaps />} />
 
         {/* Fallback Route */}

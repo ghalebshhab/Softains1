@@ -482,7 +482,7 @@ export default function Design() {
               />
             </div>
             <a
-              href="https://chat.whatsapp.com/HtHfmpO9RxzI8XksZO0edT?mode=ems_copy_t"
+              href="https://chat.whatsapp.com/FxDx9oZf3T91sdbT9fyCIe?mode=ems_copy_t"
               target="_blank"
               rel="noopener noreferrer"
               style={{

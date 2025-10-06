@@ -541,22 +541,8 @@ export default function Statis() {
           >
             <div style={{ width: "100%", maxWidth: 900, aspectRatio: "16/9" }}>
               <YouTubeResource
-                title="Rania Shaqboua"
-                embedUrl="https://www.youtube.com/embed/30fjHLmvj88?si=RT6gSqqUTyBReWaP"
-                style={{ width: "100%", height: "100%" }}
-              />
-            </div>
-            <div style={{ width: "100%", maxWidth: 900, aspectRatio: "16/9" }}>
-              <YouTubeResource
-                title="Maysam Abu Dalu"
-                embedUrl="https://www.youtube.com/embed/87y7eeMN3aU?si=3RUYIn8xiItwsgQF"
-                style={{ width: "100%", height: "100%" }}
-              />
-            </div>
-            <div style={{ width: "100%", maxWidth: 900, aspectRatio: "16/9" }}>
-              <YouTubeResource
-                title="Alaa Qadomi"
-                embedUrl="https://www.youtube.com/embed/Pxgc32Edtyg?si=2CVGzbQ0-UBfwoff"
+                title="Alaa Bataineh"
+                embedUrl="https://www.youtube.com/embed/5tHCBvZFoxw?si=z-x7PS_7xMZyzztI"
                 style={{ width: "100%", height: "100%" }}
               />
             </div>
@@ -588,7 +574,7 @@ export default function Statis() {
               />
             </div>
             <a
-              href="https://chat.whatsapp.com/HtHfmpO9RxzI8XksZO0edT?mode=ems_copy_t"
+              href="https://chat.whatsapp.com/JpxIiHGjbcs2TxXMbqZgHr?mode=ems_copy_t"
               target="_blank"
               rel="noopener noreferrer"
               style={{

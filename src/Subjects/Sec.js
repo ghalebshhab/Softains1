@@ -17,7 +17,7 @@ import YouTubeResource from "./Youtube";
 import SpotlightCard from "../Animation/SpotlightCard";
 import { Link } from "react-router-dom";
 
-export default function Web() {
+export default function Sec() {
   // Helper: robustly extract Drive file ID from several link formats
   const getDriveFileId = (url) => {
     if (!url || typeof url !== "string") return null;

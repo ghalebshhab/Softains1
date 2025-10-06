@@ -587,7 +587,7 @@ export default function Cplus() {
                   />
                 </div>
                 <a
-                  href="https://chat.whatsapp.com/IkltvLoGncHD3w4gDA5j0E"
+                  href="https://chat.whatsapp.com/FuZ2vyIQA8S2alCYnGzFs0?mode=ems_copy_t"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
@@ -627,7 +627,7 @@ export default function Cplus() {
                   />
                 </div>
                 <a
-                  href="https://chat.whatsapp.com/AnotherGroupLink"
+                  href="https://chat.whatsapp.com/Lf8211tSsDiJLgxfSJxu2m?mode=ems_copy_t"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{

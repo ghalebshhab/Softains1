@@ -515,7 +515,7 @@ export default function Vb() {
                   />
                 </div>
                 <a
-                  href="https://chat.whatsapp.com/IkltvLoGncHD3w4gDA5j0E"
+                  href="https://chat.whatsapp.com/CaoZrQUcWM02n3zlxx8D2a?mode=ems_copy_t"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{

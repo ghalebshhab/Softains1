@@ -509,7 +509,7 @@ export default function Quality() {
               />
             </div>
             <a
-              href="https://chat.whatsapp.com/HtHfmpO9RxzI8XksZO0edT?mode=ems_copy_t"
+              href="https://chat.whatsapp.com/Dku3EsPKmQ5Gx8SYRxZDIi?mode=ems_copy_t"
               target="_blank"
               rel="noopener noreferrer"
               style={{

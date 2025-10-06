@@ -521,7 +521,7 @@ export default function Analy() {
               />
             </div>
             <a
-              href="https://chat.whatsapp.com/HtHfmpO9RxzI8XksZO0edT?mode=ems_copy_t"
+              href="https://chat.whatsapp.com/BdNuNwDdYLhBFEW8PM0gvY?mode=ems_copy_t"
               target="_blank"
               rel="noopener noreferrer"
               style={{

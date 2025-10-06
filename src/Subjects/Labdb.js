@@ -538,7 +538,7 @@ export default function Db() {
                   />
                 </div>
                 <a
-                  href="https://chat.whatsapp.com/IkltvLoGncHD3w4gDA5j0E"
+                  href="https://chat.whatsapp.com/EOLdLqjVVRTAtDYKQdHFSN?mode=ems_copy_t"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
