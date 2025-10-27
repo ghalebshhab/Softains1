@@ -3,8 +3,8 @@ import CardActionArea from "@mui/material/CardActionArea";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import Social from "../Animation/Social";
-
-export default function ActionAreaCard({ name, photo, place }) {
+import { CardMedia } from "@mui/material";
+export default function ActionAreaCard({ name, photo, place, Wa, Li }) {
   return (
     <Card
       sx={{
@@ -14,8 +14,24 @@ export default function ActionAreaCard({ name, photo, place }) {
       }}
     >
       <CardActionArea>
-        <CardContent sx={{ p: 2 }}>
-          <Typography component="div" className="mem"></Typography>
+        {/* Image */}
+        <CardMedia
+          component="img"
+          height="200" // adjust height as needed
+          image={photo} // path to your image
+          alt="Profile Image"
+          sx={{
+            borderRadius: "50%", // make it circular
+            width: "250px", // adjust size
+            height: "250px",
+            margin: "0 auto", // center horizontally
+            border: "2px solid #bdbdbd",
+            objectFit: "cover",
+          }}
+        />
+
+        <CardContent sx={{ p: 2, textAlign: "center" }}>
+          {/* Name */}
           <Typography
             gutterBottom
             variant="h6"
@@ -28,6 +44,8 @@ export default function ActionAreaCard({ name, photo, place }) {
           >
             {name}
           </Typography>
+
+          {/* Place */}
           <Typography
             variant="body2"
             sx={{
@@ -37,9 +55,9 @@ export default function ActionAreaCard({ name, photo, place }) {
           >
             {place}
           </Typography>
-          <Typography>
-            <Social />
-          </Typography>
+
+          {/* Social Icons */}
+          <Social Wats={Wa} Linked={Li} />
         </CardContent>
       </CardActionArea>
     </Card>

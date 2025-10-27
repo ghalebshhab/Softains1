@@ -17,7 +17,7 @@ export default function TemporaryDrawer({ open, setOpen }) {
   };
 
   const menuItems = [
-    { text: "Home", path: "/" },
+    { text: "Home", path: "/Home" },
     { text: "Software Content", path: "/Software" },
     { text: "GPA App", path: "/Mobileapp" },
     { text: "About Us", path: "/About" },

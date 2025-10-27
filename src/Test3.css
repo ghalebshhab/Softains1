@@ -13,6 +13,19 @@
   padding: 20px;
   width: 100%;
 }
+.Pict{
+    background-image: url("./We.JPG");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 800px;
+    height: 500px;
+    border-radius: 20%;
+    -webkit-border-radius: 20%;
+    -moz-border-radius: 20%;
+    -ms-border-radius: 20%;
+    -o-border-radius: 20%;
+}
 
 .major-card {
   flex: 1 1 300px; /* grow, shrink, min width 300px */

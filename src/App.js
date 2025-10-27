@@ -50,6 +50,7 @@ import Roadmaps from "./Majors/Road/Roadmaps";
 import BlurText from "./Animation/BlurText";
 import Labdb from "./Subjects/Labdb";
 import "./Test3.css";
+import Welcome from "./Welcome";
 function App() {
   function DeveloperRedirect() {
     React.useEffect(() => {
@@ -67,7 +68,8 @@ function App() {
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<Test3 />} />
+        <Route path="/" element={<Welcome />} />
+        <Route path="/Home" element={<Test3 />} />
         <Route path="/Software" element={<Software />} />
 
         {/* Software-Related Subjects */}
