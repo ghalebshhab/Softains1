@@ -1,73 +1,146 @@
-.container{
-            width: 100vw;
-            min-height: 100vh;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            align-content: center;
-            z-index: 1000;
-            background-color: transparent;
-        }
-  .light-rays{
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-          * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-            color: white;
-        }
-        .pict{
-            background-image: url("./Light.png");
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            border-radius: 50%;
-            -webkit-border-radius: 50%;
-            -moz-border-radius: 50%;
-            -ms-border-radius: 50%;
-            -o-border-radius: 50%;
-            width: 200px;
-            height: 200px;
-            opacity: 0.8;
+/* ===== Global Reset & Base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  color: white;
 }
-.wel{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    margin-top: 2%;
+
+/* ===== Container ===== */
+.container {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  background-color: transparent;
+  padding: 2rem;
+  text-align: center;
 }
-.wel h2{
- text-align: center;
-    width: 50%;
-    color: #bdbdbd;
+
+/* ===== Background Light Effect ===== */
+.light-rays {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -100;
 }
-.wel Button {
-   background: #000000;
-  color: #FFFFFF;
+
+/* ===== Circular Image ===== */
+.pict {
+  background-image: url("./Light.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+/* ===== Welcome Section ===== */
+.wel {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2%;
+  text-align: center;
+}
+
+/* ===== Heading ===== */
+.wel h2 {
+  text-align: center;
+  width: 70%;
+  max-width: 600px;
+  color: #bdbdbd;
+  line-height: 1.6;
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+/* ===== Button Styling ===== */
+.wel button {
+  background: #000000;
+  color: #ffffff;
   border: 2px solid #000000;
   padding: 12px 32px;
   border-radius: 6px;
   cursor: pointer;
   font-weight: 600;
   font-size: 14px;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
 }
-.but:hover {
-  opacity: 0.9;
+
+.wel button:hover {
+  background: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
 }
-.Buts{
-    margin-top: 2%;
+
+/* ===== Button Container ===== */
+.Buts {
+  margin-top: 2%;
 }
+
+/* ===== Responsive Design ===== */
+@media (max-width: 1024px) {
+  .pict {
+    width: 180px;
+    height: 180px;
+  }
+
+  .wel h2 {
+    width: 80%;
+    font-size: 1.4rem;
+  }
+
+  .wel button {
+    font-size: 13px;
+    padding: 10px 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1.5rem;
+  }
+
+  .pict {
+    width: 150px;
+    height: 150px;
+  }
+
+  .wel h2 {
+    width: 90%;
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pict {
+    width: 120px;
+    height: 120px;
+  }
+
+  .wel h2 {
+    width: 95%;
+    font-size: 1.1rem;
+  }
+
+  .wel button {
+    width: 80%;
+    padding: 10px;
+    font-size: 13px;
+  }
+}
+

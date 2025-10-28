@@ -13,19 +13,36 @@
   padding: 20px;
   width: 100%;
 }
-.Pict{
-    background-image: url("./We.JPG");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 800px;
-    height: 500px;
-    border-radius: 20%;
-    -webkit-border-radius: 20%;
-    -moz-border-radius: 20%;
-    -ms-border-radius: 20%;
-    -o-border-radius: 20%;
+.Pict {
+  flex: 1 1 400px; /* grow/shrink with screen */
+  background-image: url("./We.JPG");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  aspect-ratio: 16 / 9; /* keeps it proportional */
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
+
+/* Tablet screens */
+@media (max-width: 768px) {
+  .Pict {
+    aspect-ratio: 4 / 3;
+    max-width: 100%;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 480px) {
+  .Pict {
+    max-width: 95%;
+    height: 70vw;
+    border-radius: 30%;
+  }
+}
+
 
 .major-card {
   flex: 1 1 300px; /* grow, shrink, min width 300px */
