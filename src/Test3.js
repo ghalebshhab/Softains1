@@ -127,9 +127,7 @@ export default function Test3() {
                 Uneversity , Established in 2025{" "}
               </p>
             </h2>
-            <div className="majors-grid">
-              <div className="Pict"></div>
-            </div>
+
             <div className="majors-grid" style={{ width: "70%" }}>
               <div className="major-card">
                 <h3>
